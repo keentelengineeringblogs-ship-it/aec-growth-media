@@ -1,0 +1,59 @@
+name: Generate initial Payload PostgreSQL migration
+
+on:
+  push:
+    branches:
+      - fix/payload-initial-migration
+    paths:
+      - .github/workflows/generate-payload-migration.yml
+
+permissions:
+  contents: write
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    services:
+      postgres:
+        image: postgres:16
+        env:
+          POSTGRES_DB: payload_migration
+          POSTGRES_USER: payload
+          POSTGRES_PASSWORD: temporary_local_only
+        ports:
+          - 5432:5432
+        options: >-
+          --health-cmd "pg_isready -U payload -d payload_migration"
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 10
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73c27597364c9af683
+        with:
+          ref: fix/payload-initial-migration
+          persist-credentials: true
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
+        with:
+          node-version: '22'
+      - name: Install pnpm
+        run: npm install --global pnpm@10
+      - name: Install project dependencies
+        run: pnpm install --frozen-lockfile
+      - name: Generate migration without touching production database
+        env:
+          DATABASE_URL: postgresql://payload:temporary_local_only@127.0.0.1:5432/payload_migration
+          PAYLOAD_SECRET: ephemeral-ci-migration-only-not-for-production-2026
+          NEXT_PUBLIC_SERVER_URL: http://localhost:3000
+        run: |
+          pnpm exec payload migrate:create initial --skip-empty
+          test -f src/migrations/index.ts
+          find src/migrations -maxdepth 1 -type f -print
+      - name: Commit generated migration to repair branch
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add src/migrations
+          if ! git diff --cached --quiet; then
+            git commit -m "Generate initial Payload schema migration"
+            git push origin HEAD:fix/payload-initial-migration
+          fi
