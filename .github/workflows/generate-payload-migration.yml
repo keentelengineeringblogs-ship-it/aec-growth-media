@@ -1,0 +1,52 @@
+name: Verify Payload migration and production build
+
+on:
+  push:
+    branches:
+      - fix/payload-initial-migration
+    paths:
+      - .github/workflows/generate-payload-migration.yml
+      - src/migrations/**
+      - src/payload.config.ts
+      - package.json
+      - pnpm-lock.yaml
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    services:
+      postgres:
+        image: postgres:16
+        env:
+          POSTGRES_DB: payload_migration
+          POSTGRES_USER: payload
+          POSTGRES_PASSWORD: temporary_local_only
+        ports:
+          - 5432:5432
+        options: >-
+          --health-cmd "pg_isready -U payload -d payload_migration"
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 10
+    env:
+      DATABASE_URL: postgresql://payload:temporary_local_only@127.0.0.1:5432/payload_migration
+      PAYLOAD_SECRET: ephemeral-ci-verification-only-not-for-production-2026
+      NEXT_PUBLIC_SERVER_URL: http://localhost:3000
+      CRON_SECRET: ephemeral-ci-cron-only
+      PREVIEW_SECRET: ephemeral-ci-preview-only
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
+        with:
+          node-version: '22'
+      - name: Install pnpm
+        run: npm install --global pnpm@10
+      - name: Install project dependencies
+        run: pnpm install --frozen-lockfile
+      - name: Apply committed migrations to temporary PostgreSQL
+        run: pnpm exec payload migrate
+      - name: Verify production Next.js build
+        run: pnpm run build
