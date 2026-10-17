@@ -126,13 +126,6 @@ export default function Home() {
     <section className="agm-v2-consult" id="audit">
       <div className="agm-shell">
         <div className="agm-v2-consult-head"><h2>Start with a focused conversation.</h2><p>Share where your business is today. We will use the first conversation to understand the opportunity and define a sensible next step.</p></div>
-        <div className="agm-v2-next-steps">
-          {[
-            ['01','Tell Us About Your Business','Share your website, market, services and the challenge you want to solve.'],
-            ['02','Discuss Growth Opportunities','We review the context and talk through search, website and lead-experience opportunities.'],
-            ['03','Plan Your Next Steps','Leave with a clearer direction for the work that matters most.'],
-          ].map(x=><div key={x[0]}><span>{x[0]}</span><h3>{x[1]}</h3><p>{x[2]}</p></div>)}
-        </div>
         <div className="agm-v2-form-shell">
           <div className="agm-v2-form-aside">
             <h2>Find the opportunities hiding in plain sight.</h2>
