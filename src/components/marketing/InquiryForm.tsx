@@ -10,7 +10,7 @@ export default function InquiryForm({compact=false,defaultService='',sourcePage=
  const [error,setError]=useState('')
  async function submit(e:FormEvent<HTMLFormElement>){
   e.preventDefault();const form=e.currentTarget;if(!form.reportValidity())return
-  setState('pending');setError('');const fd=new FormData(form);const body=Object.fromEntries(fd.entries())
+  setState('pending');setError('');const fd=new FormData(form);const body={...Object.fromEntries(fd.entries()),sourcePage}
   try{const r=await fetch('/api/leads',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(body)});const data=await r.json();if(!r.ok)throw new Error(data.error||'Unable to send right now.');setState('success');form.reset()}
   catch(ex){setState('error');setError(ex instanceof Error?ex.message:'Unable to send your request.')}
  }
@@ -30,7 +30,7 @@ export default function InquiryForm({compact=false,defaultService='',sourcePage=
   <label className="agm-form-message">Project Description<textarea name="message" rows={4} maxLength={2000} placeholder="Share useful context about your goals, market, timeline or current website."/></label>
   <div className="agm-form-honeypot" aria-hidden="true"><label>Leave this blank<input name="website_confirm" tabIndex={-1} autoComplete="off"/></label></div>
   <label className="agm-consent"><input type="checkbox" name="consent" required value="yes"/><span>I agree to be contacted about this inquiry and have reviewed the <a href="/privacy-policy/">privacy notice</a>. <strong>*</strong></span></label>
-  <button className="agm-btn agm-btn-primary agm-submit" type="submit" disabled={state==='pending'}>{state==='pending'?<><LoaderCircle size={17} className="agm-spin"/> Sending...</>:<>Request my audit <ArrowRight size={18}/></>}</button>
+  <button className="agm-btn agm-btn-primary agm-submit" type="submit" disabled={state==='pending'} aria-busy={state==='pending'}>{state==='pending'?<><LoaderCircle size={17} className="agm-spin"/> Sending...</>:<>Request my audit <ArrowRight size={18}/></>}</button>
   <p className="agm-form-note">Your request is reviewed by a person. We do not promise rankings or instant automated results.</p>
   {state==='success'&&<p className="agm-form-success" role="status"><CheckCircle2 size={18}/> Your request was received. We’ll review it and follow up if there’s a fit.</p>}
   {state==='error'&&<p className="agm-form-error" role="alert"><AlertCircle size={18}/>{error}</p>}
