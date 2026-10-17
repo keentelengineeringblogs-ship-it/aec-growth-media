@@ -122,7 +122,6 @@ export default function Home() {
 
     <section className="agm-v2-consult" id="audit">
       <div className="agm-shell">
-        <div className="agm-v2-consult-head"><h2>Start with a focused conversation.</h2><p>Share where your business is today. We will use the first conversation to understand the opportunity and define a sensible next step.</p></div>
         <div className="agm-v2-form-shell">
           <div className="agm-v2-form-aside">
             <h2>Find the opportunities hiding in plain sight.</h2>
