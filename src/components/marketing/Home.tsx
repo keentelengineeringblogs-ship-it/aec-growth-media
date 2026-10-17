@@ -32,10 +32,11 @@ export default function Home() {
     <section className="agm-v2-section agm-v2-intro">
       <div className="agm-shell agm-v2-intro-grid">
         <div>
-          <span className="agm-eyebrow">BUILT FOR THE BUILT ENVIRONMENT</span>
+          
           <h2>Marketing that understands how AEC buyers choose.</h2>
         </div>
         <div className="agm-v2-intro-copy">
+          <div className="agm-v4-intro-image"><Image src={photos.architecture} alt="Architecture and engineering collaboration" fill sizes="(max-width:700px) 100vw, 45vw" className="agm-img-cover"/></div>
           <p>Technical businesses do not need louder marketing. They need a clearer digital presence—one that makes expertise visible, gives buyers confidence and creates a practical next step.</p>
           <div className="agm-v2-mini-proof">
             <span><SearchCheck /> Findable</span><span><ShieldCheck /> Credible</span><span><MousePointerClick /> Conversion-ready</span>
@@ -47,7 +48,7 @@ export default function Home() {
     <section className="agm-v2-section agm-v2-industries" id="industries">
       <div className="agm-shell">
         <div className="agm-v2-heading">
-          <div><span className="agm-eyebrow">WHO WE SERVE</span><h2>Different disciplines.<br/><em>One growth standard.</em></h2></div>
+          <div><h2>Different disciplines.<br/><em>One growth standard.</em></h2></div>
           <div><p>Every AEC discipline has a different buyer journey. The strategy, proof and conversion experience should reflect it.</p><Link href="/industries/" className="agm-text-link">Explore industries <ArrowUpRight size={16}/></Link></div>
         </div>
         <div className="agm-v2-industry-grid">
@@ -64,7 +65,7 @@ export default function Home() {
     <section className="agm-v3-services" id="services">
       <div className="agm-shell">
         <div className="agm-v2-heading">
-          <div><span className="agm-eyebrow">OUR GROWTH SYSTEMS</span><h2>Connected capabilities.<br/><em>Built to work together.</em></h2></div>
+          <div><h2>Connected capabilities.<br/><em>Built to work together.</em></h2></div>
           <div><p>Search, website experience, automation and demand generation are stronger when they share one commercial direction.</p><Link href="/services/" className="agm-text-link">View all services <ArrowUpRight size={16}/></Link></div>
         </div>
         <div className="agm-v3-service-grid">
@@ -76,25 +77,9 @@ export default function Home() {
       </div>
     </section>
 
-    <section className="agm-v2-section agm-v2-work" id="work">
-      <div className="agm-shell">
-        <div className="agm-v2-heading">
-          <div><span className="agm-eyebrow">RESULTS & PROJECT PROOF</span><h2>Show the work.<br/><em>Then earn the trust.</em></h2></div>
-          <div><p>We structure digital work around evidence: the problem, the implementation and the outcome that can actually be verified.</p><Link href="/projects/" className="agm-text-link">Explore our work <ArrowUpRight size={16}/></Link></div>
-        </div>
-        <div className="agm-v2-work-grid">
-          {work.map((item, i) => <article className={'agm-v2-work-card '+(i===0?'is-featured':'')} key={item.title}>
-            <div className="agm-v2-work-image"><Image src={item.image} alt="" fill sizes="(max-width:800px) 100vw, 60vw" className="agm-img-cover"/></div>
-            <div className="agm-v2-work-copy"><span>{item.label}</span><h3>{item.title}</h3><p>{item.text}</p></div>
-          </article>)}
-        </div>
-        <p className="agm-v2-evidence-note"><FileCheck2 size={16}/> Client names, screenshots and performance metrics are published only when approved and verifiable.</p>
-      </div>
-    </section>
-
     <section className="agm-v2-process" id="process">
       <div className="agm-shell">
-        <div className="agm-v2-process-head"><span className="agm-eyebrow">OUR PROCESS</span><h2>A clear path from discovery to conversion.</h2><p>One connected workflow, with evidence and accountability at every stage.</p></div>
+        <div className="agm-v2-process-head"><h2>A clear path from discovery to conversion.</h2><p>One connected workflow, with evidence and accountability at every stage.</p></div>
         <div className="agm-v2-process-line">
           {processSteps.map((step, i) => <div className="agm-v2-process-step" key={step.title}>
             <span className="agm-v2-process-number">{String(i+1).padStart(2,'0')}</span><span className="agm-v2-process-dot"/>
@@ -107,7 +92,7 @@ export default function Home() {
     <section className="agm-v2-florida" id="locations">
       <div className="agm-v2-florida-image"><Image src={photos.heroTwo} alt="AEC market and construction activity" fill sizes="50vw" className="agm-img-cover"/></div>
       <div className="agm-v2-florida-copy">
-        <span className="agm-eyebrow agm-eyebrow-light">FLORIDA SPOTLIGHT</span>
+        
         <h2>National capability.<br/>A focused first market.</h2>
         <p>Our U.S. positioning starts with research-led Florida market development—without invented offices or unsupported local claims.</p>
         <div className="agm-v2-location-list">{locations.map((l,i)=><div key={l}><span>0{i+1}</span><strong>{l}</strong><MapPin size={15}/></div>)}</div>
@@ -117,14 +102,14 @@ export default function Home() {
 
     <section className="agm-v2-section agm-v2-insights">
       <div className="agm-shell">
-        <div className="agm-v2-heading"><div><span className="agm-eyebrow">INSIGHTS & RESOURCES</span><h2>Useful thinking for<br/><em>technical growth teams.</em></h2></div><div><p>Practical guidance for owners, marketers and technical leaders navigating search, websites and lead generation.</p><Link href="/blog/" className="agm-text-link">View insights <ArrowUpRight size={16}/></Link></div></div>
+        <div className="agm-v2-heading"><div><h2>Useful thinking for<br/><em>technical growth teams.</em></h2></div><div><p>Practical guidance for owners, marketers and technical leaders navigating search, websites and lead generation.</p><Link href="/blog/" className="agm-text-link">View insights <ArrowUpRight size={16}/></Link></div></div>
         <div className="agm-v2-article-grid">{articles.map((a,i)=><article key={a.title} className="agm-v2-article"><Link href="/blog/" className="agm-v2-article-image"><Image src={a.image} alt="" fill sizes="(max-width:700px) 100vw, 33vw" className="agm-img-cover"/><span>0{i+1}</span></Link><div><span>{a.kicker}</span><h3>{a.title}</h3><p>{a.desc}</p><Link href="/blog/">Read insight <ArrowUpRight size={15}/></Link></div></article>)}</div>
       </div>
     </section>
 
     <section className="agm-v2-delivery">
       <div className="agm-shell agm-v2-delivery-grid">
-        <div><span className="agm-eyebrow agm-eyebrow-light">THE DELIVERY STANDARD</span><h2>Clear ownership.<br/>Evidence before claims.</h2></div>
+        <div><h2>Clear ownership.<br/>Evidence before claims.</h2></div>
         <div className="agm-v2-delivery-list">
           <span><CheckCircle2/>AEC-specialist positioning</span><span><CheckCircle2/>Transparent review cycles</span><span><CheckCircle2/>Measurable reporting</span><span><CheckCircle2/>Responsible automation</span>
         </div>
@@ -132,9 +117,25 @@ export default function Home() {
       </div>
     </section>
 
+    <section className="agm-v2-section agm-v2-work agm-v4-work-before-form" id="work">
+      <div className="agm-shell">
+        <div className="agm-v2-heading">
+          <div><h2>Show the work.<br/><em>Then earn the trust.</em></h2></div>
+          <div><p>We structure digital work around evidence: the problem, the implementation and the outcome that can actually be verified.</p><Link href="/projects/" className="agm-text-link">Explore our work <ArrowUpRight size={16}/></Link></div>
+        </div>
+        <div className="agm-v2-work-grid">
+          {work.map((item, i) => <article className={'agm-v2-work-card '+(i===0?'is-featured':'')} key={item.title}>
+            <div className="agm-v2-work-image"><Image src={item.image} alt="" fill sizes="(max-width:800px) 100vw, 60vw" className="agm-img-cover"/></div>
+            <div className="agm-v2-work-copy"><span>{item.label}</span><h3>{item.title}</h3><p>{item.text}</p></div>
+          </article>)}
+        </div>
+        <p className="agm-v2-evidence-note"><FileCheck2 size={16}/> Client names, screenshots and performance metrics are published only when approved and verifiable.</p>
+      </div>
+    </section>
+
     <section className="agm-v2-consult" id="audit">
       <div className="agm-shell">
-        <div className="agm-v2-consult-head"><span className="agm-eyebrow">PLAN WITH CLARITY</span><h2>Start with a focused conversation.</h2><p>Share where your business is today. We will use the first conversation to understand the opportunity and define a sensible next step.</p></div>
+        <div className="agm-v2-consult-head"><h2>Start with a focused conversation.</h2><p>Share where your business is today. We will use the first conversation to understand the opportunity and define a sensible next step.</p></div>
         <div className="agm-v2-next-steps">
           {[
             ['01','Tell Us About Your Business','Share your website, market, services and the challenge you want to solve.'],
@@ -143,22 +144,15 @@ export default function Home() {
           ].map(x=><div key={x[0]}><span>{x[0]}</span><h3>{x[1]}</h3><p>{x[2]}</p></div>)}
         </div>
         <div className="agm-v2-form-shell">
-          <div className="agm-v2-form-aside"><span className="agm-eyebrow agm-eyebrow-light">AEC GROWTH AUDIT</span><h2>Find the opportunities hiding in plain sight.</h2><p>A human-reviewed starting point for your website, visibility and lead experience. No fake instant score. No guaranteed rankings.</p><div><span><SearchCheck/>Website & search review</span><span><UsersRound/>Buyer journey review</span><span><BarChart3/>Practical next-step discussion</span></div></div>
+          <div className="agm-v2-form-aside"><h2>Find the opportunities hiding in plain sight.</h2><p>A human-reviewed starting point for your website, visibility and lead experience. No fake instant score. No guaranteed rankings.</p><div><span><SearchCheck/>Website & search review</span><span><UsersRound/>Buyer journey review</span><span><BarChart3/>Practical next-step discussion</span></div></div>
           <InquiryForm />
         </div>
       </div>
     </section>
 
-    <section className="agm-v3-reviews" aria-label="Client reviews">
-      <div className="agm-shell agm-v3-review-shell">
-        <div><span className="agm-eyebrow agm-eyebrow-light">CLIENT REVIEWS</span><h2>Real feedback belongs here.</h2><p>This component is ready for approved AEC Growth Media testimonials. We will not publish invented client names, star ratings or outcomes.</p></div>
-        <div className="agm-v3-review-placeholder"><span>VERIFIED REVIEWS ONLY</span><blockquote>Approved client feedback will appear here with the client name, organization and source when permission is available.</blockquote><div><ShieldCheck size={20}/><span>Evidence before claims</span></div></div>
-      </div>
-    </section>
-
     <section className="agm-v2-faq" id="faq">
       <div className="agm-shell agm-v2-faq-grid">
-        <div className="agm-v2-faq-intro"><span className="agm-eyebrow">COMMON QUESTIONS</span><h2>Clear answers before we work together.</h2><p>What AEC leaders usually want to know before starting a growth engagement.</p><Link href="/contact/" className="agm-text-link">Ask us directly <ArrowUpRight size={16}/></Link></div>
+        <div className="agm-v2-faq-intro"><h2>Clear answers before we work together.</h2><p>What AEC leaders usually want to know before starting a growth engagement.</p><Link href="/contact/" className="agm-text-link">Ask us directly <ArrowUpRight size={16}/></Link></div>
         <div className="agm-v2-faq-list">{faq.map((f,i)=><details key={f.q} open={i===0}><summary><span>{String(i+1).padStart(2,'0')}</span><strong>{f.q}</strong><i>+</i></summary><div><p>{f.a}</p></div></details>)}</div>
       </div>
     </section>
