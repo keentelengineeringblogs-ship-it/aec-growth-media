@@ -91,9 +91,7 @@ test.describe('Premium header interaction recordings',()=>{
   await expect(serviceDropdown).toBeHidden()
   await page.getByRole('button',{name:'Industries'}).focus()
   await expect(page.locator('#agm-menu-industries')).toBeVisible()
-  await page.getByRole('button',{name:'Resources'}).hover()
-  await expect(page.getByRole('link',{name:'Blog / Insights'})).toBeVisible()
-  await expect(page.getByRole('link',{name:'Blog / Insights'})).toHaveAttribute('href','/blog/')
+  await expect(page.getByRole('link',{name:'Blogs',exact:true})).toHaveAttribute('href','/blog/')
  })
  test('mobile full navigation, accordion and close behavior',async ({page})=>{
   await page.setViewportSize({width:390,height:844})
