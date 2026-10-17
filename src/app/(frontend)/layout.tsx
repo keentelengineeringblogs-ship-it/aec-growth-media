@@ -16,7 +16,7 @@ import { draftMode } from 'next/headers'
 import './globals.css'
 import '@/components/marketing/marketing.css'
 import '@/components/marketing/marketing-extras.css'
-import { getServerSideURL } from '@/utilities/getURL'
+import { BRAND } from '@/lib/marketing/site-data'
 
 export default async function RootLayout({ children }: { children: React.ReactNode }) {
   const { isEnabled } = await draftMode()
@@ -46,10 +46,9 @@ export default async function RootLayout({ children }: { children: React.ReactNo
 }
 
 export const metadata: Metadata = {
-  metadataBase: new URL(getServerSideURL()),
+  metadataBase: new URL(BRAND.website),
   openGraph: mergeOpenGraph(),
   twitter: {
     card: 'summary_large_image',
-    creator: '@payloadcms',
   },
 }
