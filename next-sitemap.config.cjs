@@ -1,7 +1,5 @@
-const SITE_URL =
-  process.env.NEXT_PUBLIC_SERVER_URL ||
-  process.env.VERCEL_PROJECT_PRODUCTION_URL ||
-  'https://example.com'
+const SITE_URL = 'https://aecgrowthmedia.com'
+const IS_PREVIEW = process.env.VERCEL_ENV === 'preview'
 
 /** @type {import('next-sitemap').IConfig} */
 module.exports = {
@@ -12,7 +10,7 @@ module.exports = {
     policies: [
       {
         userAgent: '*',
-        disallow: '/admin/*',
+        disallow: IS_PREVIEW ? '/' : '/admin/*',
       },
     ],
     additionalSitemaps: [`${SITE_URL}/pages-sitemap.xml`, `${SITE_URL}/posts-sitemap.xml`],
