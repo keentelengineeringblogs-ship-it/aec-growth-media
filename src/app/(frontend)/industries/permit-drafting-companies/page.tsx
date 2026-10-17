@@ -8,7 +8,7 @@ const data: IndustryDetailData = {
   "variant": "drafting",
   "title": "Digital Marketing for Permit & Drafting Companies",
   "introduction": "Help buyers understand the drawing services available, the information needed to begin and how to request accurate project support with confidence.",
-  "image": photos.drafting,
+  "image": "https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=1400&q=85",
   "imageAlt": "Architectural and site plan documentation on a desk",
   "insightTitle": "Buyers often arrive with a specific drawing or permitting need.",
   "insightBody": "Property owners, designers and contractors may search for permit drawings, site plans, drafting support or defined documentation packages. A clear site can reduce uncertainty around deliverables, service geography, requirements and the request process.",
