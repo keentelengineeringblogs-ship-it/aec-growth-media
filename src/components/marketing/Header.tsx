@@ -22,10 +22,7 @@ const navigation:NavItem[]=[
  ]},
  {label:'Locations',href:'/locations/florida/',submenu:[{label:'Florida',href:'/locations/florida/'}]},
  {label:'Case Studies',href:'/projects/'},
- {label:'Resources',href:'/blog/',submenu:[
-  {label:'Blog / Insights',href:'/blog/'},
-  {label:'Case Studies',href:'/projects/'},
- ]},
+ {label:'Blogs',href:'/blog/'},
  {label:'About',href:'/about/'},
 ]
 
