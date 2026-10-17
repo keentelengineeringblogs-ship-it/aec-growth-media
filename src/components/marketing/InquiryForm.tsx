@@ -5,7 +5,7 @@ import {ArrowRight,CheckCircle2,AlertCircle,LoaderCircle} from 'lucide-react'
 const sectors=['Engineering firm','Construction company','Architecture firm','Permit or drafting firm','Other AEC business']
 const services=['SEO + AI Visibility','Website Design & Redesign','AI Automation','Paid Media & Social','Not sure yet']
 
-export default function InquiryForm({compact=false}:{compact?:boolean}){
+export default function InquiryForm({compact=false,defaultService='',sourcePage='general'}:{compact?:boolean;defaultService?:string;sourcePage?:string}){
  const [state,setState]=useState<'idle'|'pending'|'success'|'error'>('idle')
  const [error,setError]=useState('')
  async function submit(e:FormEvent<HTMLFormElement>){
@@ -14,7 +14,7 @@ export default function InquiryForm({compact=false}:{compact?:boolean}){
   try{const r=await fetch('/api/leads',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(body)});const data=await r.json();if(!r.ok)throw new Error(data.error||'Unable to send right now.');setState('success');form.reset()}
   catch(ex){setState('error');setError(ex instanceof Error?ex.message:'Unable to send your request.')}
  }
- return <form className={'agm-form '+(compact?'agm-form-compact':'')} onSubmit={submit} aria-label="AEC Growth Audit request form">
+ return <form className={'agm-form '+(compact?'agm-form-compact':'')} data-source-page={sourcePage} onSubmit={submit} aria-label="AEC Growth Audit request form">
   <div className="agm-form-heading"><span className="agm-eyebrow">START WITH CLARITY</span><h3>Request your AEC Growth Audit</h3><p>Tell us about your business, market and the growth challenge you want to solve.</p></div>
   <div className="agm-form-grid">
    <label>Full Name <span>*</span><input name="fullName" required minLength={2} maxLength={100} autoComplete="name" placeholder="Your name"/></label>
@@ -23,7 +23,7 @@ export default function InquiryForm({compact=false}:{compact?:boolean}){
    <label>Website URL <span>*</span><input type="url" name="website" required maxLength={300} placeholder="https://yourcompany.com"/></label>
    <label>State <span>*</span><input name="state" required maxLength={80} placeholder="e.g. Florida"/></label>
    <label>Business Sector <span>*</span><select name="industry" required defaultValue=""><option value="" disabled>Select sector</option>{sectors.map(s=><option key={s}>{s}</option>)}</select></label>
-   <label>Interested Service <span>*</span><select name="goal" required defaultValue=""><option value="" disabled>Select service</option>{services.map(s=><option key={s}>{s}</option>)}</select></label>
+   <label>Interested Service <span>*</span><select name="goal" required defaultValue={defaultService}><option value="" disabled>Select service</option>{services.map(s=><option key={s}>{s}</option>)}</select></label>
    <label>Optional Budget <select name="budget" defaultValue=""><option value="">Prefer not to say</option><option>Under $5,000</option><option>$5,000–$10,000</option><option>$10,000–$25,000</option><option>$25,000+</option></select></label>
   </div>
   <label className="agm-form-message">Main Challenge <span>*</span><textarea name="challenge" required rows={3} maxLength={1200} placeholder="What is the main growth challenge you want to solve?"/></label>
