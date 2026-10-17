@@ -50,7 +50,7 @@ const data: IndustryDetailData = {
   ],
   "evidenceHeading": "Make the technical work understandable without making it generic.",
   "evidenceBody": "Engineering buyers need accurate service explanations, discipline-specific expertise and practical evidence of project fit. A strong digital system supports that evaluation through clear content and usable interfaces.",
-  "imageSecondary": photos.work,
+  "imageSecondary": "https://images.unsplash.com/photo-1521737711867-e3b97375f902?auto=format&fit=crop&w=1300&q=83",
   "imageSecondaryAlt": "Real commercial built environment and engineered structure",
   "processIntro": "We consider the firm’s practice areas, regulatory context, target markets and decision-makers before recommending channels or building pages.",
   "process": [
