@@ -306,3 +306,64 @@
  .agm-indp-showcase-image img,.agm-indp-connected-links svg,.agm-premium-footer-group a,.agm-premium-cta svg,.agm-premium-trigger svg,.agm-ind-hero-secondary svg{transition:none!important}
  .agm-indp-showcase:hover .agm-indp-showcase-image img{transform:none}
 }
+
+
+/* DISTINCT INDUSTRY SPOTLIGHTS: varied form, meaningful content */
+.agm-ind-spotlight{padding:clamp(70px,7.3vw,110px) 0}
+.agm-ind-spotlight h2{font-size:clamp(31px,3.35vw,45px);line-height:1.16}
+.agm-ind-spotlight p{font-size:16px;line-height:1.79}
+.agm-ind-spotlight-engineering{background:#fff}
+.agm-ind-spotlight-engineering-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(40px,6vw,92px);align-items:center}
+.agm-ind-spotlight-engineering-grid>div:first-child{max-width:600px}
+.agm-ind-spotlight-engineering-grid h2{margin:0 0 23px}
+.agm-ind-spotlight-photo{position:relative;aspect-ratio:1.1;min-height:415px;border-radius:13px;overflow:hidden}
+.agm-ind-specialty-tags{display:flex;flex-wrap:wrap;gap:10px;margin-top:28px}
+.agm-ind-specialty-tags span{padding:11px 14px;border:1px solid var(--agm-border);border-radius:3px;background:var(--agm-cloud);font-size:12px;font-weight:800;color:var(--agm-navy)}
+.agm-ind-spotlight-construction{background:var(--agm-cloud)}
+.agm-ind-spotlight-construction-head{max-width:860px;margin-bottom:36px}
+.agm-ind-spotlight-construction-head h2{margin:0 0 19px}
+.agm-ind-spotlight-construction-head p{max-width:730px}
+.agm-ind-construction-feature{display:grid;grid-template-columns:1.25fr .75fr;min-height:460px;background:#fff;border:1px solid var(--agm-border);border-radius:13px;overflow:hidden}
+.agm-ind-construction-image{position:relative;min-height:460px}
+.agm-ind-construction-copy{padding:clamp(26px,4vw,52px);align-self:center}
+.agm-ind-construction-copy>span{font-size:10px;letter-spacing:.13em;font-weight:850;color:var(--agm-teal)}
+.agm-ind-construction-copy ol{list-style:none;padding:0;margin:22px 0 0;display:grid;gap:21px}
+.agm-ind-construction-copy li{padding-top:15px;border-top:1px solid var(--agm-border)}
+.agm-ind-construction-copy strong,.agm-ind-construction-copy small{display:block}
+.agm-ind-construction-copy strong{font-size:17px;color:var(--agm-navy);margin-bottom:8px}
+.agm-ind-construction-copy small{font-size:13px;line-height:1.65;color:var(--agm-muted)}
+.agm-ind-spotlight-architecture{background:#fff}
+.agm-ind-architecture-heading{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:end;margin-bottom:30px}
+.agm-ind-architecture-heading .agm-industry-eyebrow{grid-column:1/-1;margin-bottom:0}
+.agm-ind-architecture-heading h2{margin:0}
+.agm-ind-architecture-heading p{margin:0}
+.agm-ind-architecture-feature{position:relative;min-height:530px;margin:0;overflow:hidden;border-radius:12px;background:var(--agm-cloud)}
+.agm-ind-architecture-feature figcaption{position:absolute;bottom:0;left:0;right:0;display:flex;justify-content:space-between;align-items:end;gap:20px;background:rgba(7,27,43,.78);padding:26px clamp(22px,3vw,40px);color:#fff}
+.agm-ind-architecture-feature figcaption strong{font-size:19px;max-width:380px}
+.agm-ind-architecture-feature figcaption span{font-size:13px;color:#e1eaf0;max-width:530px}
+.agm-ind-spotlight-drafting{background:#f1f5f7}
+.agm-ind-drafting-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:clamp(40px,6vw,92px)}
+.agm-ind-drafting-grid>div:first-child{max-width:520px}
+.agm-ind-drafting-grid h2{margin:0 0 23px}
+.agm-ind-drafting-steps{border-top:1px solid #cbd9de}
+.agm-ind-drafting-steps article{display:grid;grid-template-columns:55px minmax(0,1fr);gap:15px;padding:22px 0;border-bottom:1px solid #cbd9de}
+.agm-ind-drafting-steps article>span{font-size:12px;font-weight:850;color:var(--agm-teal)}
+.agm-ind-drafting-steps h3{font-size:20px;color:var(--agm-navy);margin:0 0 9px}
+.agm-ind-drafting-steps p{font-size:14px;line-height:1.6;margin:0}
+@media(max-width:850px){
+ .agm-ind-spotlight-engineering-grid,.agm-ind-drafting-grid,.agm-ind-architecture-heading{grid-template-columns:1fr;gap:26px}
+ .agm-ind-architecture-heading .agm-industry-eyebrow{grid-column:auto}
+ .agm-ind-construction-feature{grid-template-columns:1fr}
+ .agm-ind-construction-image{min-height:380px}
+ .agm-ind-architecture-feature{min-height:430px}
+}
+@media(max-width:620px){
+ .agm-ind-spotlight{padding:60px 0}
+ .agm-ind-spotlight-photo{min-height:290px;aspect-ratio:4/3}
+ .agm-ind-construction-image{min-height:270px}
+ .agm-ind-architecture-feature{min-height:340px}
+ .agm-ind-architecture-feature figcaption{flex-direction:column;align-items:flex-start;gap:10px;padding:20px}
+ .agm-ind-architecture-feature figcaption strong{font-size:16px}
+ .agm-ind-architecture-feature figcaption span{font-size:12px}
+ .agm-ind-drafting-steps article{grid-template-columns:38px 1fr;gap:12px}
+}
