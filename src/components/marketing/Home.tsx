@@ -1,9 +1,9 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import {
-  ArrowUpRight, Check, CheckCircle2, FileCheck2, MapPin, BriefcaseBusiness,
-  SearchCheck, Monitor, Bot, Megaphone, ShieldCheck, BarChart3, MousePointerClick,
-  UsersRound, Building2, Compass, ChevronRight
+  ArrowUpRight, FileCheck2, MapPin,
+  SearchCheck, ShieldCheck, BarChart3, MousePointerClick,
+  UsersRound, ChevronRight
 } from 'lucide-react'
 import HeroSlider from '@/components/marketing/HeroSlider'
 import InquiryForm from '@/components/marketing/InquiryForm'
@@ -31,17 +31,14 @@ export default function Home() {
 
     <section className="agm-v2-section agm-v2-intro">
       <div className="agm-shell agm-v2-intro-grid">
-        <div>
-          
+        <div className="agm-v4-intro-content">
           <h2>Marketing that understands how AEC buyers choose.</h2>
-        </div>
-        <div className="agm-v2-intro-copy">
-          <div className="agm-v4-intro-image"><Image src={photos.architecture} alt="Architecture and engineering collaboration" fill sizes="(max-width:700px) 100vw, 45vw" className="agm-img-cover"/></div>
           <p>Technical businesses do not need louder marketing. They need a clearer digital presence—one that makes expertise visible, gives buyers confidence and creates a practical next step.</p>
           <div className="agm-v2-mini-proof">
             <span><SearchCheck /> Findable</span><span><ShieldCheck /> Credible</span><span><MousePointerClick /> Conversion-ready</span>
           </div>
         </div>
+        <div className="agm-v4-intro-image"><Image src={photos.architecture} alt="Architecture and engineering collaboration" fill sizes="(max-width:700px) 100vw, 45vw" className="agm-img-cover"/></div>
       </div>
     </section>
 
@@ -56,7 +53,7 @@ export default function Home() {
             <Image src={item.image} alt={item.alt} fill sizes="(max-width: 700px) 100vw, 50vw" className="agm-img-cover"/>
             <span className="agm-v2-card-shade"/>
             <span className="agm-v2-card-index">0{i+1}</span>
-            <div className="agm-v2-card-copy"><item.icon size={22}/><h3>{item.title}</h3><p>{item.desc}</p><span>Explore <ArrowUpRight size={16}/></span></div>
+            <div className="agm-v2-card-copy"><h3>{item.title}</h3><p>{item.desc}</p><span>Explore <ArrowUpRight size={16}/></span></div>
           </Link>)}
         </div>
       </div>
@@ -71,7 +68,7 @@ export default function Home() {
         <div className="agm-v3-service-grid">
           {services.map((s, i) => <Link href={s.href} className="agm-v3-service-card" key={s.title}>
             <div className="agm-v3-service-image"><Image src={[photos.engineering,photos.architecture,photos.drafting,photos.construction][i]} alt={s.title} fill sizes="(max-width:700px) 100vw, 50vw" className="agm-img-cover"/><span className="agm-v3-service-number">0{i+1}</span></div>
-            <div className="agm-v3-service-body"><span className="agm-v3-service-icon"><s.icon size={22}/></span><h3>{i===0?'SEO + AI Visibility':i===2?'AI Automation':i===3?'Paid Media & Social':s.title}</h3><p>{s.short}</p><span className="agm-v3-service-link">Explore service <ArrowUpRight size={17}/></span></div>
+            <div className="agm-v3-service-body"><h3>{i===0?'SEO + AI Visibility':i===2?'AI Automation':i===3?'Paid Media & Social':s.title}</h3><p>{s.short}</p><span className="agm-v3-service-link">Explore service <ArrowUpRight size={17}/></span></div>
           </Link>)}
         </div>
       </div>
@@ -79,12 +76,14 @@ export default function Home() {
 
     <section className="agm-v2-process" id="process">
       <div className="agm-shell">
-        <div className="agm-v2-process-head"><h2>A clear path from discovery to conversion.</h2><p>One connected workflow, with evidence and accountability at every stage.</p></div>
-        <div className="agm-v2-process-line">
-          {processSteps.map((step, i) => <div className="agm-v2-process-step" key={step.title}>
-            <span className="agm-v2-process-number">{String(i+1).padStart(2,'0')}</span><span className="agm-v2-process-dot"/>
-            <step.icon size={21}/><h3>{i===3?'Establish Evidence':i===4?'Track Visibility':i===5?'Convert':step.title}</h3><p>{step.desc}</p>
-          </div>)}
+        <div className="agm-v2-process-head"><h2>A clear path from discovery to conversion.</h2><p>One connected workflow with clear ownership, practical execution and measurable progress.</p></div>
+        <div className="agm-v4-process-map">
+          {[
+            ['01','Discover','Understand your market, buyers, services and current digital performance.'],
+            ['02','Plan','Prioritize the search, website and lead-experience opportunities that matter most.'],
+            ['03','Build & Prove','Execute the work and strengthen the evidence buyers need to trust your firm.'],
+            ['04','Measure & Convert','Track visibility, improve the journey and turn qualified interest into action.'],
+          ].map((step,i)=><article className={'agm-v4-process-card agm-v4-process-card-'+(i+1)} key={step[0]}><span>{step[0]}</span><h3>{step[1]}</h3><p>{step[2]}</p></article>)}
         </div>
       </div>
     </section>
@@ -104,16 +103,7 @@ export default function Home() {
       <div className="agm-shell">
         <div className="agm-v2-heading"><div><h2>Useful thinking for<br/><em>technical growth teams.</em></h2></div><div><p>Practical guidance for owners, marketers and technical leaders navigating search, websites and lead generation.</p><Link href="/blog/" className="agm-text-link">View insights <ArrowUpRight size={16}/></Link></div></div>
         <div className="agm-v2-article-grid">{articles.map((a,i)=><article key={a.title} className="agm-v2-article"><Link href="/blog/" className="agm-v2-article-image"><Image src={a.image} alt="" fill sizes="(max-width:700px) 100vw, 33vw" className="agm-img-cover"/><span>0{i+1}</span></Link><div><span>{a.kicker}</span><h3>{a.title}</h3><p>{a.desc}</p><Link href="/blog/">Read insight <ArrowUpRight size={15}/></Link></div></article>)}</div>
-      </div>
-    </section>
-
-    <section className="agm-v2-delivery">
-      <div className="agm-shell agm-v2-delivery-grid">
-        <div><h2>Clear ownership.<br/>Evidence before claims.</h2></div>
-        <div className="agm-v2-delivery-list">
-          <span><CheckCircle2/>AEC-specialist positioning</span><span><CheckCircle2/>Transparent review cycles</span><span><CheckCircle2/>Measurable reporting</span><span><CheckCircle2/>Responsible automation</span>
-        </div>
-        <div className="agm-v2-delivery-stat"><strong>01</strong><p>One accountable growth direction across search, website and lead experience.</p></div>
+        <div className="agm-v4-insights-cta"><Link href="/blog/" className="agm-btn agm-btn-dark">View All Insights <ArrowUpRight size={17}/></Link></div>
       </div>
     </section>
 
@@ -144,7 +134,13 @@ export default function Home() {
           ].map(x=><div key={x[0]}><span>{x[0]}</span><h3>{x[1]}</h3><p>{x[2]}</p></div>)}
         </div>
         <div className="agm-v2-form-shell">
-          <div className="agm-v2-form-aside"><h2>Find the opportunities hiding in plain sight.</h2><p>A human-reviewed starting point for your website, visibility and lead experience. No fake instant score. No guaranteed rankings.</p><div><span><SearchCheck/>Website & search review</span><span><UsersRound/>Buyer journey review</span><span><BarChart3/>Practical next-step discussion</span></div></div>
+          <div className="agm-v2-form-aside">
+            <h2>Find the opportunities hiding in plain sight.</h2>
+            <p>A human-reviewed starting point for your website, visibility and lead experience. No fake instant score. No guaranteed rankings.</p>
+            <div className="agm-v4-form-image"><Image src={photos.construction} alt="AEC professionals reviewing a project" fill sizes="(max-width:1050px) 100vw, 40vw" className="agm-img-cover"/></div>
+            <div className="agm-v4-form-benefits"><span><SearchCheck/>Website & search review</span><span><UsersRound/>Buyer journey review</span><span><BarChart3/>Practical next-step discussion</span></div>
+            <div className="agm-v4-form-next"><h3>What happens next</h3><ol><li><strong>Share your business</strong><small>Tell us about your market, services and priorities.</small></li><li><strong>Discuss the opportunity</strong><small>We review the context and identify the highest-value areas.</small></li><li><strong>Plan the next step</strong><small>Leave with a clear direction for what should happen next.</small></li></ol></div>
+          </div>
           <InquiryForm />
         </div>
       </div>
