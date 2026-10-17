@@ -107,19 +107,16 @@ export default function Home() {
       </div>
     </section>
 
-    <section className="agm-v2-section agm-v2-work agm-v4-work-before-form" id="work">
+    <section className="agm-v2-section agm-v5-reviews" id="reviews">
       <div className="agm-shell">
         <div className="agm-v2-heading">
-          <div><h2>Show the work.<br/><em>Then earn the trust.</em></h2></div>
-          <div><p>We structure digital work around evidence: the problem, the implementation and the outcome that can actually be verified.</p><Link href="/projects/" className="agm-text-link">Explore our work <ArrowUpRight size={16}/></Link></div>
+          <div><h2>What AEC teams<br/><em>value in a growth partner.</em></h2></div>
+          <div><p>Client feedback belongs here once it is approved and verifiable. Until then, we do not publish invented testimonials, names, companies or ratings.</p></div>
         </div>
-        <div className="agm-v2-work-grid">
-          {work.map((item, i) => <article className={'agm-v2-work-card '+(i===0?'is-featured':'')} key={item.title}>
-            <div className="agm-v2-work-image"><Image src={item.image} alt="" fill sizes="(max-width:800px) 100vw, 60vw" className="agm-img-cover"/></div>
-            <div className="agm-v2-work-copy"><span>{item.label}</span><h3>{item.title}</h3><p>{item.text}</p></div>
-          </article>)}
+        <div className="agm-v5-review-placeholder">
+          <div><span>CLIENT REVIEWS</span><h3>Verified client feedback coming soon.</h3><p>This space is designed for real testimonials and project-specific proof as approvals become available.</p></div>
+          <Link href="/#audit" className="agm-btn agm-btn-dark">Start a conversation <ArrowUpRight size={17}/></Link>
         </div>
-        <p className="agm-v2-evidence-note"><FileCheck2 size={16}/> Client names, screenshots and performance metrics are published only when approved and verifiable.</p>
       </div>
     </section>
 
