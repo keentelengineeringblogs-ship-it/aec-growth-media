@@ -7,6 +7,7 @@ import {
 } from 'lucide-react'
 import HeroSlider from '@/components/marketing/HeroSlider'
 import InquiryForm from '@/components/marketing/InquiryForm'
+import RevealMotion from '@/components/marketing/RevealMotion'
 import { industries, services, photos, processSteps, locations, faq, articles } from '@/lib/marketing/site-data'
 
 const trust = ['Architecture', 'Engineering', 'Construction', 'Permit & Drafting', 'AI Search', 'Web Experience']
@@ -19,6 +20,7 @@ const work = [
 
 export default function Home() {
   return <main id="main" className="agm-home-v2">
+    <RevealMotion />
     <HeroSlider />
 
     <section className="agm-v2-trust" aria-label="AEC Growth Media disciplines">
