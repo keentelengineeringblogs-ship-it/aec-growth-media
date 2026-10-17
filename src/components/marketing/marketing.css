@@ -368,3 +368,53 @@ h1,h2,h3,h4,p{margin-top:0}h1,h2,h3,h4{font-family:Manrope,'DM Sans',Arial,sans-
  .agm-svc-compact-form .agm-consent>span,.agm-v2-consult .agm-consent>span{font-size:13px!important}
 }
 @media(prefers-reduced-motion:reduce){.agm-svc-buyer-photo img{transition:none}.agm-svc-buyer-photo:hover img{transform:none}}
+
+
+/* SEO service requested visual refinements */
+.agm-svc-master .agm-svc-benefits{
+  position:relative;
+  isolation:isolate;
+  overflow:hidden;
+  background:var(--agm-deep);
+  color:#fff;
+}
+.agm-svc-master .agm-svc-benefits::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  z-index:-2;
+  background:url("https://images.unsplash.com/photo-1503387837-b154d5074bd2?auto=format&fit=crop&w=1800&q=82") center/cover no-repeat;
+}
+.agm-svc-master .agm-svc-benefits::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  z-index:-1;
+  background:rgba(7,27,43,.84);
+}
+.agm-svc-master .agm-svc-benefits h2,
+.agm-svc-master .agm-svc-benefits h3{color:#fff}
+.agm-svc-master .agm-svc-benefits p{color:rgba(255,255,255,.84)}
+.agm-svc-master .agm-svc-benefit{
+  background:rgba(255,255,255,.96);
+}
+.agm-svc-master .agm-svc-benefit h3{color:var(--agm-navy)}
+.agm-svc-master .agm-svc-benefit p{color:var(--agm-muted)}
+.agm-svc-master .agm-svc-final-separated{
+  margin:72px auto;
+  width:min(1240px,calc(100% - 72px));
+  min-height:300px;
+  border-radius:16px;
+}
+.agm-svc-master .agm-svc-final-separated .agm-svc-final-inner{
+  width:100%;
+  padding-left:clamp(28px,4vw,58px);
+  padding-right:clamp(28px,4vw,58px);
+}
+@media(max-width:620px){
+ .agm-svc-master .agm-svc-final-separated{
+   margin:52px auto;
+   width:calc(100% - 32px);
+   min-height:360px;
+ }
+}
