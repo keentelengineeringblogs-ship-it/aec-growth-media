@@ -367,3 +367,35 @@
  .agm-ind-architecture-feature figcaption span{font-size:12px}
  .agm-ind-drafting-steps article{grid-template-columns:38px 1fr;gap:12px}
 }
+
+
+/* Consistent #071B2B navy hero on ALL five industry routes.
+   Keep real side photography and restore readable contrast for every variant. */
+.agm-industries-premium .agm-indp-hero,
+.agm-industry-detail .agm-ind-detail-hero,
+.agm-industry-detail--engineering .agm-ind-detail-hero,
+.agm-industry-detail--construction .agm-ind-detail-hero,
+.agm-industry-detail--architecture .agm-ind-detail-hero,
+.agm-industry-detail--drafting .agm-ind-detail-hero {
+  background-color: #071B2B;
+  color: #FFFFFF;
+}
+.agm-industry-detail .agm-ind-detail-hero-copy h1,
+.agm-industry-detail .agm-ind-detail-hero-copy nav,
+.agm-industries-premium .agm-indp-hero h1 {
+  color: #FFFFFF;
+}
+.agm-industry-detail .agm-ind-detail-hero-copy p,
+.agm-industries-premium .agm-indp-hero p {
+  color: #D9E6EC;
+}
+.agm-industry-detail .agm-ind-detail-hero-copy nav a {
+  color: #F4A259;
+}
+.agm-industry-detail .agm-ind-detail-hero .agm-industry-eyebrow {
+  color: #F4A259;
+}
+.agm-industry-detail .agm-ind-detail-hero .agm-ind-hero-secondary {
+  color: #FFFFFF;
+  border-bottom-color: #F4A259;
+}
