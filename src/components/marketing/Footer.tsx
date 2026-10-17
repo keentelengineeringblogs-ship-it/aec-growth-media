@@ -7,7 +7,7 @@ const groups=[
  {title:'INDUSTRIES',links:[['Engineering Firms','/industries/engineering-firms/'],['Construction Companies','/industries/construction-companies/'],['Architecture Firms','/industries/architecture-firms/'],['Permit & Drafting','/industries/permit-drafting-companies/']]},
  {title:'LOCATIONS',links:[['Florida','/locations/florida/']]},
  {title:'RESOURCES',links:[['Blog','/blog/'],['Case Studies','/projects/']]},
- {title:'COMPANY',links:[['About Us','/about/'],['Contact','/contact/'],['Privacy Policy','/privacy-policy/'],['Terms of Service','/terms/']]},
+ {title:'COMPANY',links:[['About Us','/about/'],['Contact','/contact/'],['Privacy Policy','/privacy-policy/'],['Terms of Service','/terms/'],['Accessibility','/accessibility/']]},
 ]
 const values=[[Search,'More Visibility'],[BarChart3,'Higher-Quality Leads'],[Bot,'Smarter Marketing with AI'],[TrendingUp,'Real Business Growth']] as const
 
