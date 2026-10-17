@@ -4,7 +4,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { useEffect, useRef, useState } from 'react'
-import { ArrowDown, ArrowRight, ArrowUpRight, BarChart3, ChevronDown, MapPin, Menu, X } from 'lucide-react'
+import { ArrowRight, ArrowUpRight, BarChart3, ChevronDown, MapPin, Menu, X } from 'lucide-react'
 
 type NavItem = {label:string; href:string; submenu?:{label:string;href:string;description?:string}[]}
 const navigation:NavItem[]=[
@@ -37,6 +37,7 @@ export default function Header(){
  const closeTimer=useRef<ReturnType<typeof setTimeout>|null>(null)
  const root=useRef<HTMLElement|null>(null)
  const firstLink=useRef<HTMLAnchorElement|null>(null)
+ const suppressNextFocus=useRef(false)
  const isDesktop=()=>typeof window!=='undefined' && window.matchMedia('(min-width: 1025px)').matches
  const hasHover=()=>typeof window!=='undefined' && window.matchMedia('(hover: hover) and (min-width: 1025px)').matches
  const clearClose=()=>{if(closeTimer.current){clearTimeout(closeTimer.current);closeTimer.current=null}}
@@ -54,7 +55,12 @@ export default function Header(){
    if(e.key==='Escape'){
     const previous=activeMenu
     close()
-    if(previous)root.current?.querySelector<HTMLButtonElement>(`[data-menu-trigger="${previous}"]`)?.focus()
+    if(previous){
+     suppressNextFocus.current=true
+     if(isDesktop()) root.current?.querySelector<HTMLButtonElement>(`[data-menu-trigger="${previous}"]`)?.focus()
+     else root.current?.querySelector<HTMLButtonElement>('.agm-premium-toggle')?.focus()
+     requestAnimationFrame(()=>{suppressNextFocus.current=false})
+    }
    }
   }
   const onOutside=(e:PointerEvent)=>{
@@ -95,7 +101,7 @@ export default function Header(){
        return <div key={item.label} className={'agm-premium-entry'+(expanded?' is-expanded':'')+(selected?' is-current':'')}
          onPointerEnter={()=>{if(expandable&&hasHover())show(item.label)}}
          onPointerLeave={schedule}
-         onFocusCapture={()=>{if(expandable&&isDesktop())show(item.label)}}
+         onFocusCapture={()=>{if(!suppressNextFocus.current&&expandable&&isDesktop())show(item.label)}}
          onBlurCapture={e=>{
           const next=e.relatedTarget as Node|null
           if(isDesktop()&&(!next||!e.currentTarget.contains(next)))setActiveMenu(current=>current===item.label?null:current)
