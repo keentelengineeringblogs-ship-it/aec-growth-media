@@ -2,6 +2,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { ArrowRight, ArrowUpRight, CheckCircle2 } from 'lucide-react'
 import InquiryForm from '@/components/marketing/InquiryForm'
+import { photos } from '@/lib/marketing/site-data'
 import RevealMotion from '@/components/marketing/RevealMotion'
 
 export type IndustryDetailData = {
@@ -92,6 +93,28 @@ const additionalQuestions: Record<IndustryDetailData['variant'], [string,string]
  ],
 }
 
+
+function IndustrySpotlight({variant}:{variant:IndustryDetailData['variant']}){
+ if(variant==='engineering'){
+  return <section className="agm-ind-spotlight agm-ind-spotlight-engineering"><div className="agm-shell agm-ind-spotlight-engineering-grid">
+   <div data-reveal><span className="agm-industry-eyebrow">SERVICE &amp; SPECIALIZATION STRUCTURE</span><h2>Give Specialized Expertise a Clear Place to Live.</h2><p>Engineering firms need pages and pathways that reflect their actual disciplines. A multidisciplinary practice can organize specialist work without overwhelming procurement teams or project owners.</p><p>The categories below are examples of how <em>engineering clients</em> may organize verified services—not engineering work provided by our marketing agency.</p><div className="agm-ind-specialty-tags"><span>Civil &amp; Site</span><span>Structural</span><span>MEP</span><span>Electrical &amp; Power</span></div></div>
+   <div className="agm-ind-spotlight-photo" data-reveal><Image src={photos.process} alt="Commercial infrastructure representing technical engineering project work" fill sizes="(max-width:850px) 100vw, 48vw" className="agm-img-cover"/></div>
+  </div></section>
+ }
+ if(variant==='construction'){
+  return <section className="agm-ind-spotlight agm-ind-spotlight-construction"><div className="agm-shell">
+   <div className="agm-ind-spotlight-construction-head" data-reveal><span className="agm-industry-eyebrow">FROM PROJECT RESEARCH TO A RELEVANT INQUIRY</span><h2>Help Buyers Recognize the Work You Actually Deliver.</h2><p>The construction journey should connect real project scope with suitable service pages, geographic relevance and a clear request process.</p></div>
+   <div className="agm-ind-construction-feature" data-reveal><div className="agm-ind-construction-image"><Image src={photos.work} alt="Built commercial environment representing construction project types" fill sizes="(max-width:800px) 100vw, 56vw" className="agm-img-cover"/></div><div className="agm-ind-construction-copy"><span>THREE ELEMENTS OF TRUST</span><ol><li><strong>Relevant project types</strong><small>Show the actual work your company is prepared to undertake.</small></li><li><strong>Authentic project evidence</strong><small>Use permitted photographs and accurately attributed scope.</small></li><li><strong>Quote-ready inquiries</strong><small>Request essential project details without overwhelming visitors.</small></li></ol></div></div>
+  </div></section>
+ }
+ if(variant==='architecture'){
+  return <section className="agm-ind-spotlight agm-ind-spotlight-architecture"><div className="agm-shell"><div className="agm-ind-architecture-heading" data-reveal><span className="agm-industry-eyebrow">PORTFOLIO &amp; PRACTICE POSITIONING</span><h2>Design Work Should Have Space to Speak.</h2><p>A visually confident architecture website still needs accurate service context, project detail and clear consultation paths.</p></div>
+   <figure className="agm-ind-architecture-feature" data-reveal><Image src={photos.heroThree} alt="Architectural drawing and design documentation used as editorial illustration" fill sizes="(max-width:800px) 100vw, 1200px" className="agm-img-cover"/><figcaption><strong>Visual clarity + useful context</strong><span>Editorial imagery illustrates a design discipline; client portfolios require approved project images and actual scope.</span></figcaption></figure>
+  </div></section>
+ }
+ return <section className="agm-ind-spotlight agm-ind-spotlight-drafting"><div className="agm-shell agm-ind-drafting-grid"><div data-reveal><span className="agm-industry-eyebrow">PROJECT INQUIRY EXPERIENCE</span><h2>From Drawing Request to a Useful Human Review.</h2><p>Good drafting websites help visitors identify the appropriate drawing category and submit enough details for a realistic next step.</p><Link href="/services/ai-automation/" className="agm-text-link">See Lead Operations <ArrowRight size={17}/></Link></div><div className="agm-ind-drafting-steps" data-reveal>{[['01','Choose the drawing need','Explain available deliverables and service boundaries.'],['02','Provide useful project inputs','Request location, project type and available documents.'],['03','Review with the right person','Keep technical scope, requirements and approval decisions under human review.']].map(x=><article key={x[0]}><span>{x[0]}</span><div><h3>{x[1]}</h3><p>{x[2]}</p></div></article>)}</div></div></section>
+}
+
 export default function IndustryDetail({ data: d }: { data: IndustryDetailData }) {
  const notes = industryNotes[d.variant]
  const faqs = [...d.faqs, ...additionalQuestions[d.variant]]
@@ -133,6 +156,7 @@ export default function IndustryDetail({ data: d }: { data: IndustryDetailData }
     <div className="agm-ind-detail-capabilities">{d.capabilities.map((x,i)=><article key={x[0]} data-reveal><b>{String(i+1).padStart(2,'0')}</b><div><h3>{x[0]}</h3><p>{x[1]}</p></div><Link href={x[2]} aria-label={'Explore '+x[0]}><ArrowUpRight size={20}/></Link></article>)}</div>
    </div>
   </section>
+  <IndustrySpotlight variant={d.variant}/>
   <section className="agm-ind-detail-evidence">
    <div className="agm-shell agm-ind-evidence-layout">
     <div className="agm-ind-detail-evidence-copy" data-reveal><span className="agm-industry-eyebrow">CLEAR EVIDENCE, NO EMPTY CLAIMS</span><h2>{notes.featureTitle}</h2><p>{notes.featureText}</p><p>{d.evidenceBody}</p><div><CheckCircle2 size={19}/> Only approved actual project work may be presented as client evidence.</div><Link href="/projects/" className="agm-text-link">Explore Our Approach to Project Evidence <ArrowUpRight size={16}/></Link></div>
