@@ -436,3 +436,16 @@ h1,h2,h3,h4,p{margin-top:0}h1,h2,h3,h4{font-family:Manrope,'DM Sans',Arial,sans-
 .agm-paid-page .agm-svc-final-separated{margin-top:72px;margin-bottom:72px}
 @media(max-width:800px){.agm-paid-page .agm-svc-scope-list{grid-template-columns:1fr}}
 @media(max-width:560px){.agm-paid-page .agm-svc-final-separated{margin-top:52px;margin-bottom:52px}}
+
+
+/* Remaining AEC service page visual treatments */
+.agm-web-page .agm-web-benefits,.agm-auto-page .agm-auto-benefits{position:relative;isolation:isolate;overflow:hidden;background:var(--agm-deep);color:#fff}
+.agm-web-page .agm-web-benefits:before,.agm-auto-page .agm-auto-benefits:before{content:"";position:absolute;inset:0;z-index:-2;background:center/cover no-repeat}
+.agm-web-page .agm-web-benefits:before{background-image:url("https://images.unsplash.com/photo-1487958449943-2429e8be8625?auto=format&fit=crop&w=1800&q=82")}
+.agm-auto-page .agm-auto-benefits:before{background-image:url("https://images.unsplash.com/photo-1581094794329-c8112a89af12?auto=format&fit=crop&w=1800&q=82")}
+.agm-web-page .agm-web-benefits:after,.agm-auto-page .agm-auto-benefits:after{content:"";position:absolute;inset:0;z-index:-1;background:rgba(7,27,43,.86)}
+.agm-web-page .agm-web-benefits h2,.agm-auto-page .agm-auto-benefits h2{color:#fff}
+.agm-web-page .agm-web-benefits>div>div:first-child p,.agm-auto-page .agm-auto-benefits>div>div:first-child p{color:rgba(255,255,255,.84)}
+.agm-web-page .agm-svc-benefit,.agm-auto-page .agm-svc-benefit{background:rgba(255,255,255,.96)}
+.agm-web-page .agm-svc-benefit h3,.agm-auto-page .agm-svc-benefit h3{color:var(--agm-navy)}
+.agm-web-page .agm-svc-benefit p,.agm-auto-page .agm-svc-benefit p{color:var(--agm-muted)}
