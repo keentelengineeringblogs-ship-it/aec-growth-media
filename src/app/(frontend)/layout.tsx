@@ -16,6 +16,7 @@ import { draftMode } from 'next/headers'
 import './globals.css'
 import '@/components/marketing/marketing.css'
 import '@/components/marketing/marketing-extras.css'
+import '@/components/marketing/industry-premium.css'
 import { BRAND } from '@/lib/marketing/site-data'
 
 export default async function RootLayout({ children }: { children: React.ReactNode }) {
