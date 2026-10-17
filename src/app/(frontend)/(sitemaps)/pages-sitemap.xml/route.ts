@@ -1,4 +1,5 @@
 import { getServerSideSitemap } from 'next-sitemap'
+import { BRAND } from '@/lib/marketing/site-data'
 import { getPayload } from 'payload'
 import config from '@payload-config'
 import { unstable_cache } from 'next/cache'
@@ -7,10 +8,7 @@ import { landingPages } from '@/lib/marketing/page-data'
 const getPagesSitemap = unstable_cache(
   async () => {
     const payload = await getPayload({ config })
-    const SITE_URL =
-      process.env.NEXT_PUBLIC_SERVER_URL ||
-      process.env.VERCEL_PROJECT_PRODUCTION_URL ||
-      'https://example.com'
+    const SITE_URL = BRAND.website
 
     const results = await payload.find({
       collection: 'pages',
@@ -33,18 +31,9 @@ const getPagesSitemap = unstable_cache(
     const dateFallback = new Date().toISOString()
 
     const defaultSitemap = [
-      { loc: `${SITE_URL}/`, lastmod: dateFallback },
+      { loc: `${SITE_URL}/` },
       ...Object.keys(landingPages)
-        .filter((slug) => !['privacy-policy', 'terms', 'accessibility'].includes(slug))
-        .map((slug) => ({ loc: `${SITE_URL}/${slug}`, lastmod: dateFallback })),
-      {
-        loc: `${SITE_URL}/search`,
-        lastmod: dateFallback,
-      },
-      {
-        loc: `${SITE_URL}/posts`,
-        lastmod: dateFallback,
-      },
+        .map((slug) => ({ loc: `${SITE_URL}/${slug}/` })),
     ]
 
     const sitemap = results.docs
