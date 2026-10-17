@@ -1,16 +1,16 @@
 import 'dotenv/config'
 import { getPayload } from 'payload'
-import type { Page } from '@/payload-types'
+import type { ContentBlock, Page } from '@/payload-types'
 import { landingPages } from '@/lib/marketing/page-data'
 
 // Prevent Payload's development-time schema push when this importer starts.
 process.env.PAYLOAD_MIGRATING = 'true'
 const { default: config } = await import('@payload-config')
 
-type RichTextNode = Page['hero']['richText']['root']['children'][number]
-type RichText = Page['hero']['richText']
+type RichText = NonNullable<Page['hero']['richText']>
+type RichTextNode = RichText['root']['children'][number]
 
-const text = (value: string) => ({
+const text = (value: string): RichTextNode => ({
   type: 'text',
   detail: 0,
   format: 0,
@@ -20,38 +20,35 @@ const text = (value: string) => ({
   version: 1,
 })
 
-const paragraph = (value: string) =>
-  ({
-    type: 'paragraph',
-    children: [text(value)],
+const paragraph = (value: string): RichTextNode => ({
+  type: 'paragraph',
+  children: [text(value)],
+  direction: 'ltr',
+  format: '',
+  indent: 0,
+  version: 1,
+})
+
+const heading = (value: string, tag: 'h1' | 'h2' | 'h3' = 'h2'): RichTextNode => ({
+  type: 'heading',
+  children: [text(value)],
+  direction: 'ltr',
+  format: '',
+  indent: 0,
+  tag,
+  version: 1,
+})
+
+const richText = (children: RichTextNode[]): RichText => ({
+  root: {
+    type: 'root',
+    children,
     direction: 'ltr',
     format: '',
     indent: 0,
     version: 1,
-  }) as RichTextNode
-
-const heading = (value: string, tag: 'h1' | 'h2' | 'h3' = 'h2') =>
-  ({
-    type: 'heading',
-    children: [text(value)],
-    direction: 'ltr',
-    format: '',
-    indent: 0,
-    tag,
-    version: 1,
-  }) as RichTextNode
-
-const richText = (children: RichTextNode[]) =>
-  ({
-    root: {
-      type: 'root',
-      children,
-      direction: 'ltr',
-      format: '',
-      indent: 0,
-      version: 1,
-    },
-  }) as RichText
+  },
+})
 
 const home = {
   title: 'AEC Growth Media',
@@ -87,6 +84,19 @@ const toData = (page: (typeof candidates)[number]) => {
     )
   }
 
+  const layout: ContentBlock[] = [
+    {
+      blockType: 'content',
+      columns: [
+        {
+          size: 'full',
+          richText: richText(content),
+          enableLink: false,
+        },
+      ],
+    },
+  ]
+
   return {
     title: page.title,
     slug: page.slug,
@@ -95,23 +105,12 @@ const toData = (page: (typeof candidates)[number]) => {
       type: 'lowImpact' as const,
       richText: richText([heading(page.title, 'h1'), paragraph(page.description)]),
     },
-    layout: [
-      {
-        blockType: 'content' as const,
-        columns: [
-          {
-            size: 'full' as const,
-            richText: richText(content),
-            enableLink: false,
-          },
-        ],
-      },
-    ],
+    layout,
     meta: {
       title: page.metaTitle,
       description: page.description.slice(0, 155),
     },
-  } satisfies Omit<Page, 'id' | 'createdAt' | 'updatedAt'>
+  }
 }
 
 const payload = await getPayload({ config })
