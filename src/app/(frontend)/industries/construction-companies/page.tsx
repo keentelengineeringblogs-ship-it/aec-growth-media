@@ -8,7 +8,7 @@ const data: IndustryDetailData = {
   "variant": "construction",
   "title": "Digital Marketing for Construction Companies",
   "introduction": "Show the projects you can deliver, the markets you serve and the next step for a serious buyer. Connect clear service positioning, real project evidence and practical inquiry pathways.",
-  "image": photos.construction,
+  "image": "https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=1400&q=85",
   "imageAlt": "Active commercial construction site with structural work",
   "insightTitle": "Construction demand begins with project fit.",
   "insightBody": "Prospects need to know where your company operates, what construction work you undertake, the project types you specialize in and how to discuss scope. Better discovery is valuable only when it reaches an appropriate buyer.",
@@ -50,7 +50,7 @@ const data: IndustryDetailData = {
   ],
   "evidenceHeading": "Real jobsite work is your strongest visual story.",
   "evidenceBody": "Photographs of actual completed projects and documented scope can help clients understand the type and quality of work your company undertakes. Construction marketing should never pass off stock imagery as completed client projects.",
-  "imageSecondary": photos.heroTwo,
+  "imageSecondary": "https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&w=1200&q=83",
   "imageSecondaryAlt": "Commercial building construction at an active site",
   "processIntro": "We focus on services, job types and locations where qualified work is genuinely feasible—not vanity traffic totals.",
   "process": [
