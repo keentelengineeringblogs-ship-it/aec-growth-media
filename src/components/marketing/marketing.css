@@ -217,3 +217,20 @@ h1,h2,h3,h4,p{margin-top:0}h1,h2,h3,h4{font-family:Manrope,'DM Sans',Arial,sans-
 @media(max-width:920px){.agm-v3-hero{height:calc(100svh - 102px);min-height:570px}}
 @media(max-width:620px){.agm-v3-hero{height:calc(100svh - 98px);min-height:560px}.agm-v2-marquee>div{animation-duration:20s}}
 @media(prefers-reduced-motion:reduce){.agm-v2-marquee>div{animation:none}}
+
+/* Header/footer readability refinement */
+.agm-hf-utility-inner{font-size:12px}
+.agm-hf-brand{width:214px!important}
+.agm-hf-menu{gap:25px}
+.agm-hf-nav-entry{font-size:13px;font-weight:750}
+.agm-hf-cta{font-size:13px;padding:14px 20px}
+.agm-hf-brand-col p{font-size:14px;line-height:1.7}
+.agm-hf-values span{font-size:13px}
+.agm-hf-col h3,.agm-hf-contact h3{font-size:11px}
+.agm-hf-col a{font-size:12.5px;line-height:1.5}
+.agm-hf-contact>span{font-size:13px}
+.agm-hf-contact small{font-size:11px}
+.agm-hf-footer-cta{font-size:12px}
+.agm-hf-bottom{font-size:11px}
+@media(max-width:1180px){.agm-hf-brand{width:185px!important}.agm-hf-menu{gap:16px}.agm-hf-nav-entry{font-size:12px}}
+@media(max-width:620px){.agm-hf-brand{width:165px!important}.agm-hf-tagline{font-size:10px}.agm-hf-col a{font-size:13px}.agm-hf-col h3{font-size:11px}.agm-hf-brand-col p{font-size:13px}}
