@@ -2,6 +2,7 @@
 @import 'tw-animate-css';
 
 @config '../../../tailwind.config.mjs';
+@source '../(demo)';
 
 @custom-variant dark (&:is([data-theme='dark'] *));
 @custom-variant sm (@media (width >= theme(--breakpoint-sm)));

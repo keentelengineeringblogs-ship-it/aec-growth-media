@@ -12,6 +12,10 @@ import { RenderHero } from '@/heros/RenderHero'
 import { generateMeta } from '@/utilities/generateMeta'
 import PageClient from './page.client'
 import { LivePreviewListener } from '@/components/LivePreviewListener'
+import MarketingPage, {
+  generateMetadata as marketingMetadata,
+} from '@/components/marketing/ContentPage'
+import { landingPages } from '@/lib/marketing/page-data'
 
 export async function generateStaticParams() {
   const payload = await getPayload({ config: configPromise })
@@ -34,7 +38,16 @@ export async function generateStaticParams() {
       return { slug }
     })
 
-  return params
+  return [
+    ...new Map(
+      [
+        ...params,
+        ...Object.keys(landingPages)
+          .filter((slug) => !slug.includes('/'))
+          .map((slug) => ({ slug })),
+      ].map((entry) => [entry.slug, entry]),
+    ).values(),
+  ]
 }
 
 type Args = {
@@ -61,13 +74,21 @@ export default async function Page({ params: paramsPromise }: Args) {
   }
 
   if (!page) {
+    if (landingPages[decodedSlug]) {
+      return (
+        <>
+          <PayloadRedirects disableNotFound url={url} />
+          <MarketingPage params={Promise.resolve({ slug: decodedSlug.split('/') })} />
+        </>
+      )
+    }
     return <PayloadRedirects url={url} />
   }
 
   const { hero, layout } = page
 
   return (
-    <article className="pt-16 pb-24">
+    <article id="main" className="pt-16 pb-24">
       <PageClient />
       {/* Allows redirects for valid pages too */}
       <PayloadRedirects disableNotFound url={url} />
@@ -88,6 +109,9 @@ export async function generateMetadata({ params: paramsPromise }: Args): Promise
     slug: decodedSlug,
   })
 
+  if (!page && landingPages[decodedSlug]) {
+    return marketingMetadata({ params: Promise.resolve({ slug: decodedSlug.split('/') }) })
+  }
   return generateMeta({ doc: page })
 }
 

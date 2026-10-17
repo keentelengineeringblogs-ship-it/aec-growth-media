@@ -2,6 +2,7 @@ import { getServerSideSitemap } from 'next-sitemap'
 import { getPayload } from 'payload'
 import config from '@payload-config'
 import { unstable_cache } from 'next/cache'
+import { landingPages } from '@/lib/marketing/page-data'
 
 const getPagesSitemap = unstable_cache(
   async () => {
@@ -32,6 +33,10 @@ const getPagesSitemap = unstable_cache(
     const dateFallback = new Date().toISOString()
 
     const defaultSitemap = [
+      { loc: `${SITE_URL}/`, lastmod: dateFallback },
+      ...Object.keys(landingPages)
+        .filter((slug) => !['privacy-policy', 'terms', 'accessibility'].includes(slug))
+        .map((slug) => ({ loc: `${SITE_URL}/${slug}`, lastmod: dateFallback })),
       {
         loc: `${SITE_URL}/search`,
         lastmod: dateFallback,
@@ -53,7 +58,7 @@ const getPagesSitemap = unstable_cache(
           })
       : []
 
-    return [...defaultSitemap, ...sitemap]
+    return [...new Map([...defaultSitemap, ...sitemap].map((entry) => [entry.loc, entry])).values()]
   },
   ['pages-sitemap'],
   {
