@@ -130,7 +130,7 @@ export default function Home() {
             <div className="agm-v4-form-benefits"><span><SearchCheck/>Website & search review</span><span><UsersRound/>Buyer journey review</span><span><BarChart3/>Practical next-step discussion</span></div>
             <div className="agm-v4-form-next"><h3>What happens next</h3><ol><li><strong>Share your business</strong><small>Tell us about your market, services and priorities.</small></li><li><strong>Discuss the opportunity</strong><small>We review the context and identify the highest-value areas.</small></li><li><strong>Plan the next step</strong><small>Leave with a clear direction for what should happen next.</small></li></ol></div>
           </div>
-          <InquiryForm />
+          <InquiryForm sourcePage="homepage" />
         </div>
       </div>
     </section>
