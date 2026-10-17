@@ -1,0 +1,220 @@
+
+/* Editorial supporting-page system. All selectors intentionally scoped. */
+.agm-services-page,.agm-industries-page,.agm-florida-page,.agm-contact-page{background:#fff;overflow-x:clip}
+.agm-services-page h2,.agm-industries-page h2,.agm-florida-page h2,.agm-contact-page h2{font-size:clamp(32px,3.5vw,46px);line-height:1.12}
+.agm-services-page p,.agm-industries-page p,.agm-florida-page p,.agm-contact-page p{font-size:16px;line-height:1.75}
+.agm-services-page section[id],.agm-industries-page section[id],.agm-florida-page section[id],.agm-contact-page section[id]{scroll-margin-top:120px}
+.agm-services-hero{background:var(--agm-deep);color:#fff;overflow:hidden}
+.agm-services-hero-grid{display:grid;grid-template-columns:1.02fr .98fr;align-items:center;min-height:min(780px,calc(100svh - 118px));gap:clamp(35px,5vw,84px)}
+.agm-services-hero-grid>div:first-child{padding:70px 0}
+.agm-services-hero nav,.agm-industries-hero nav,.agm-florida-hero nav,.agm-contact-hero nav{font-size:13px;margin-bottom:28px;color:inherit;opacity:.8}
+.agm-services-hero h1{color:#fff;letter-spacing:-.055em;line-height:1.06;font-size:clamp(42px,4.7vw,67px);margin-bottom:25px}
+.agm-services-hero h1 em{font-style:normal;color:var(--agm-copper)}
+.agm-services-hero p{color:#dbe8ed;max-width:620px;font-size:18px;margin-bottom:28px}
+.agm-services-hero-photo{height:100%;min-height:560px;position:relative;overflow:hidden}
+.agm-services-hero-photo:after{content:'';position:absolute;inset:0;background:rgba(5,30,53,.08)}
+.agm-services-thesis{padding:86px 0}
+.agm-services-thesis-grid{display:grid;grid-template-columns:.5fr 1.5fr 1fr;gap:32px;align-items:start}
+.agm-services-thesis-grid>span,.agm-services-pillar-copy>span,.agm-industries-gallery header>span,.agm-industries-feature>div>span,.agm-florida-context>div>div:first-child>span,.agm-contact-explain>span{font-size:12px;letter-spacing:.13em;text-transform:uppercase;font-weight:800;color:var(--agm-teal)}
+.agm-services-thesis-grid h2{margin:0}
+.agm-services-thesis-grid p{margin:0}
+.agm-services-pillar-wrap{padding:88px 0;background:var(--agm-cloud)}
+.agm-services-section-head{display:flex;align-items:end;justify-content:space-between;gap:50px;margin-bottom:46px}
+.agm-services-section-head h2{max-width:660px;margin:0}
+.agm-services-section-head p{max-width:415px;margin:0}
+.agm-services-pillars{display:grid;gap:44px}
+.agm-services-pillar{background:#fff;display:grid;grid-template-columns:1fr 1fr;min-height:460px;overflow:hidden;border:1px solid var(--agm-border);border-radius:14px}
+.agm-services-pillar-photo{position:relative;min-height:460px;overflow:hidden}
+.agm-services-pillar-photo img{transition:transform .45s}
+.agm-services-pillar:hover img{transform:scale(1.035)}
+.agm-services-pillar:nth-child(even) .agm-services-pillar-photo{order:2}
+.agm-services-pillar-copy{padding:clamp(35px,4.5vw,70px);display:flex;flex-direction:column;justify-content:center;align-items:flex-start}
+.agm-services-pillar-copy h3{font-size:clamp(29px,3vw,43px);margin:14px 0}
+.agm-services-pillar-copy p{max-width:560px}
+.agm-services-pillar-copy ul{list-style:none;margin:8px 0 26px;padding:0;display:grid;gap:11px}
+.agm-services-pillar-copy li{display:flex;align-items:flex-start;gap:10px;font-size:14px;font-weight:600;color:var(--agm-navy)}
+.agm-services-pillar-copy li svg{flex:none;color:var(--agm-teal);margin-top:3px}
+.agm-services-system{padding:98px 0;background:var(--agm-navy);color:#fff}
+.agm-services-system header{max-width:840px;margin-bottom:46px}
+.agm-services-system h2{color:#fff}
+.agm-services-system p{color:#d7e4e9}
+.agm-services-system-flow{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));border-top:1px solid rgba(255,255,255,.25)}
+.agm-services-system-flow>div{padding:26px 19px;border-left:1px solid rgba(255,255,255,.17)}
+.agm-services-system-flow span,.agm-services-system-flow strong,.agm-services-system-flow small{display:block}
+.agm-services-system-flow span{font-size:12px;color:var(--agm-copper);font-weight:800}
+.agm-services-system-flow strong{font-size:23px;margin:13px 0 5px}
+.agm-services-system-flow small{font-size:13px;color:#d6e5eb}
+.agm-services-choice{padding:92px 0}
+.agm-services-choice-grid{display:grid;grid-template-columns:.7fr 1.3fr;gap:70px}
+.agm-services-choice-grid>div{border-top:1px solid var(--agm-border)}
+.agm-services-choice-grid a{display:flex;justify-content:space-between;align-items:center;gap:25px;padding:24px 0;border-bottom:1px solid var(--agm-border)}
+.agm-services-choice-grid strong{font-size:18px;color:var(--agm-navy);max-width:440px}
+.agm-services-choice-grid a>span{display:flex;align-items:center;gap:7px;font-size:13px;color:var(--agm-teal);font-weight:700;min-width:190px;justify-content:flex-end}
+.agm-services-choice-grid a:hover>span svg{transform:translateX(4px)}
+.agm-services-process{padding:90px 0;background:var(--agm-cloud)}
+.agm-services-process h2{max-width:800px;margin-bottom:42px}
+.agm-services-process .agm-shell>div{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:25px}
+.agm-services-process article{border-top:2px solid var(--agm-teal);padding-top:22px}
+.agm-services-process article b{color:var(--agm-copper);font-size:13px}
+.agm-services-process article h3{font-size:19px;margin:15px 0 10px}
+.agm-services-process article p{font-size:14px}
+.agm-services-final,.agm-industries-final,.agm-florida-final{padding:85px 0;background:var(--agm-deep);text-align:center}
+.agm-services-final h2,.agm-industries-final h2,.agm-florida-final h2{color:#fff;max-width:840px;margin:0 auto 18px}
+.agm-services-final p,.agm-industries-final p,.agm-florida-final p{color:#d8e7eb;max-width:700px;margin:0 auto 30px}
+
+/* Industry editorial gallery */
+.agm-industries-hero{position:relative;isolation:isolate;background:var(--agm-deep);color:#fff;display:flex;align-items:center;min-height:clamp(570px,calc(100svh - 118px),800px)}
+.agm-industries-hero>img{position:absolute;z-index:-2}
+.agm-industries-hero-overlay{position:absolute;inset:0;z-index:-1;background:rgba(5,30,53,.77)}
+.agm-industries-hero .agm-shell{padding:74px 0}
+.agm-industries-hero h1{max-width:1030px;color:#fff;line-height:1.06;letter-spacing:-.055em;font-size:clamp(42px,5.2vw,72px)}
+.agm-industries-hero p{color:#e0e9ef;max-width:760px;font-size:19px;margin-bottom:28px}
+.agm-industries-context{padding:100px 0}
+.agm-industries-context-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px}
+.agm-industries-context-grid h2{max-width:520px;margin:0}
+.agm-industries-context-grid p{font-size:17px}
+.agm-industries-gallery{padding:85px 0;background:var(--agm-cloud)}
+.agm-industries-gallery header{margin-bottom:40px}
+.agm-industries-gallery header h2{max-width:820px;margin:11px 0 0}
+.agm-industries-gallery-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px}
+.agm-industries-feature{position:relative;isolation:isolate;display:flex;align-items:end;min-height:465px;border-radius:14px;overflow:hidden;background:var(--agm-deep);color:#fff}
+.agm-industries-feature>img{position:absolute;z-index:-2;transition:transform .45s}
+.agm-industries-feature:hover>img{transform:scale(1.035)}
+.agm-industries-feature-shade{position:absolute;inset:0;z-index:-1;background:rgba(5,30,53,.62)}
+.agm-industries-feature>div:last-child{padding:clamp(24px,3vw,40px)}
+.agm-industries-feature>div>span{color:var(--agm-copper)}
+.agm-industries-feature h3{color:#fff;font-size:clamp(26px,2.5vw,37px);margin:13px 0}
+.agm-industries-feature p{max-width:520px;color:#e3edf1;font-size:15px}
+.agm-industries-feature small{font-size:13px;display:inline-flex;align-items:center;gap:9px;font-weight:800;color:#fff}
+.agm-industries-journeys{padding:95px 0}
+.agm-industries-journeys-head{display:grid;grid-template-columns:1fr 1fr;gap:50px;margin-bottom:35px}
+.agm-industries-journeys-head p{max-width:520px}
+.agm-industries-journeys-list{border-top:1px solid var(--agm-border)}
+.agm-industries-journeys-list article{display:grid;grid-template-columns:.7fr 1fr 1.3fr;gap:30px;border-bottom:1px solid var(--agm-border);padding:23px 0;align-items:center}
+.agm-industries-journeys-list strong{font-size:18px;color:var(--agm-navy)}
+.agm-industries-journeys-list p{margin:0}
+.agm-industries-journeys-list span{font-size:14px;color:var(--agm-teal)}
+.agm-industries-services{padding:92px 0;background:var(--agm-cloud)}
+.agm-industries-services>.agm-shell{display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:center}
+.agm-industries-services p{max-width:540px}
+.agm-industries-services-photo{position:relative;aspect-ratio:1.25;overflow:hidden;border-radius:14px}
+
+/* Florida market page */
+.agm-florida-hero{position:relative;isolation:isolate;background:var(--agm-deep);min-height:clamp(550px,calc(100svh - 118px),760px);display:flex;align-items:center;color:#fff}
+.agm-florida-hero>img{z-index:-2}
+.agm-florida-hero-overlay{position:absolute;inset:0;z-index:-1;background:rgba(5,30,53,.75)}
+.agm-florida-hero .agm-shell{padding:75px 0}
+.agm-florida-hero .agm-shell>span{font-size:12px;font-weight:800;letter-spacing:.1em;display:flex;align-items:center;gap:9px;color:var(--agm-copper)}
+.agm-florida-hero h1{font-size:clamp(42px,5vw,70px);max-width:900px;color:#fff;line-height:1.06;margin:17px 0 21px}
+.agm-florida-hero p{font-size:18px;max-width:730px;color:#dae7ed;margin-bottom:25px}
+.agm-florida-context{padding:100px 0}
+.agm-florida-context>.agm-shell{display:grid;grid-template-columns:1fr 1fr;gap:75px}
+.agm-florida-context h2{margin-top:15px}
+.agm-florida-context p{font-size:17px}
+.agm-florida-industry{background:var(--agm-cloud);padding:85px 0}
+.agm-florida-industry h2{max-width:900px;margin-bottom:40px}
+.agm-florida-industry .agm-shell>div{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:15px}
+.agm-florida-industry a{position:relative;background:#fff;border:1px solid var(--agm-border);border-radius:10px;padding:28px 52px 28px 28px;transition:border-color .2s,transform .2s}
+.agm-florida-industry a:hover{border-color:var(--agm-teal);transform:translateY(-3px)}
+.agm-florida-industry h3{font-size:22px}
+.agm-florida-industry p{font-size:15px;margin:0}
+.agm-florida-industry a>svg{position:absolute;right:23px;top:30px;color:var(--agm-teal)}
+.agm-florida-services{padding:92px 0}
+.agm-florida-services>.agm-shell{display:grid;grid-template-columns:.9fr 1.1fr;gap:70px;align-items:center}
+.agm-florida-services-photo{position:relative;aspect-ratio:4/5;border-radius:14px;overflow:hidden}
+.agm-florida-services h2{margin-bottom:30px}
+.agm-florida-services a{position:relative;border-bottom:1px solid var(--agm-border);padding:17px 30px 17px 0;display:flex;flex-direction:column;gap:4px}
+.agm-florida-services a strong{font-size:17px;color:var(--agm-navy)}
+.agm-florida-services a span{font-size:14px;color:var(--agm-muted)}
+.agm-florida-services a svg{position:absolute;right:1px;top:21px;color:var(--agm-teal)}
+.agm-florida-markets{padding:85px 0;background:var(--agm-navy);color:#fff}
+.agm-florida-markets h2{color:#fff;max-width:800px}
+.agm-florida-markets p{color:#d6e6ed;max-width:860px}
+.agm-florida-markets .agm-shell>div{display:flex;flex-wrap:wrap;gap:10px;margin-top:30px}
+.agm-florida-markets span{display:flex;align-items:center;gap:9px;padding:9px 13px;border:1px solid rgba(255,255,255,.32);border-radius:4px;font-size:13px}
+.agm-florida-markets span svg{color:var(--agm-copper)}
+.agm-florida-faq{padding:88px 0}
+.agm-florida-faq h2{max-width:800px}
+.agm-florida-faq .agm-shell>div,.agm-contact-faq .agm-shell>div{max-width:900px;margin-top:28px}
+.agm-florida-faq details,.agm-contact-faq details{border-bottom:1px solid var(--agm-border);padding:0 0}
+.agm-florida-faq summary,.agm-contact-faq summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:20px;padding:21px 0;font-weight:800;font-size:17px;color:var(--agm-navy)}
+.agm-florida-faq summary::-webkit-details-marker,.agm-contact-faq summary::-webkit-details-marker{display:none}
+.agm-florida-faq summary span,.agm-contact-faq summary span{font-size:24px;color:var(--agm-teal)}
+.agm-florida-faq details[open] summary span,.agm-contact-faq details[open] summary span{transform:rotate(45deg)}
+.agm-florida-faq details>p,.agm-contact-faq details>p{font-size:15px;padding:0 24px 19px 0}
+
+/* Contact conversion */
+.agm-contact-hero{background:var(--agm-deep);padding:85px 0;color:#fff}
+.agm-contact-hero h1{font-size:clamp(42px,4.9vw,67px);line-height:1.07;color:#fff;max-width:970px;margin-bottom:23px}
+.agm-contact-hero p{color:#d9e7ed;font-size:19px;max-width:770px}
+.agm-contact-main{padding:80px 0;background:var(--agm-cloud)}
+.agm-contact-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(440px,1fr);gap:clamp(30px,5vw,74px);align-items:start}
+.agm-contact-explain>span{color:var(--agm-teal)}
+.agm-contact-explain h2{max-width:550px;margin:14px 0 20px}
+.agm-contact-explain>p{max-width:550px}
+.agm-contact-what{border-top:1px solid var(--agm-border);margin-top:30px;padding-top:22px}
+.agm-contact-what h3,.agm-contact-service-links h3{font-size:21px}
+.agm-contact-what p{display:flex;align-items:flex-start;gap:10px;font-size:15px}
+.agm-contact-what svg{flex:none;color:var(--agm-teal);margin-top:4px}
+.agm-contact-service-links{padding-top:23px}
+.agm-contact-service-links a{display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--agm-border);padding:12px 0;font-weight:700;color:var(--agm-navy);font-size:15px}
+.agm-contact-service-links a svg{color:var(--agm-teal)}
+.agm-contact-form>.agm-form{width:100%;max-width:none;padding:32px;background:#fff;box-shadow:var(--agm-shadow);border:1px solid var(--agm-border);border-radius:12px}
+.agm-contact-form .agm-consent{display:flex!important;gap:12px!important;align-items:flex-start!important;white-space:normal!important}
+.agm-contact-form .agm-consent input{width:18px!important;min-width:18px!important;height:18px!important;flex:none;margin:3px 0 0!important}
+.agm-contact-form .agm-consent span{min-width:0;white-space:normal!important;font-size:13px}
+.agm-contact-prepare{padding:92px 0}
+.agm-contact-prepare>.agm-shell{display:grid;grid-template-columns:1fr 1fr;gap:85px}
+.agm-contact-prepare ul{padding-left:18px}
+.agm-contact-prepare li{padding:5px 0}
+.agm-contact-faq{padding:85px 0;background:var(--agm-cloud)}
+.agm-contact-bottom{padding:65px 0}
+.agm-contact-bottom .agm-shell{display:flex;justify-content:space-between;align-items:center;gap:35px}
+.agm-contact-bottom h2{margin:0}
+
+@media(max-width:1050px){
+ .agm-services-thesis-grid{grid-template-columns:1fr 1fr}.agm-services-thesis-grid>span{grid-column:1/-1}
+ .agm-services-hero-grid{grid-template-columns:1fr 1fr}
+ .agm-services-pillar{min-height:0}.agm-services-pillar-photo{min-height:430px}
+ .agm-services-choice-grid{gap:35px}
+ .agm-industries-context-grid{gap:40px}
+ .agm-contact-grid{grid-template-columns:1fr 1fr;gap:30px}
+}
+@media(max-width:850px){
+ .agm-services-hero-grid{grid-template-columns:1fr;min-height:0}
+ .agm-services-hero-grid>div:first-child{padding:75px 0 0}
+ .agm-services-hero-photo{min-height:360px;height:360px}
+ .agm-services-thesis-grid{grid-template-columns:1fr;gap:22px}
+ .agm-services-section-head{flex-direction:column;align-items:flex-start;gap:18px}
+ .agm-services-pillar{grid-template-columns:1fr}
+ .agm-services-pillar-photo,.agm-services-pillar:nth-child(even) .agm-services-pillar-photo{order:0;min-height:360px}
+ .agm-services-choice-grid,.agm-industries-context-grid,.agm-industries-journeys-head,.agm-florida-context>.agm-shell,.agm-florida-services>.agm-shell,.agm-contact-prepare>.agm-shell{grid-template-columns:1fr;gap:25px}
+ .agm-services-system-flow,.agm-services-process .agm-shell>div{grid-template-columns:1fr 1fr}
+ .agm-industries-services>.agm-shell{grid-template-columns:1fr;gap:30px}
+ .agm-contact-grid{grid-template-columns:1fr}
+ .agm-contact-form{max-width:720px}
+}
+@media(max-width:620px){
+ .agm-services-hero h1,.agm-industries-hero h1,.agm-florida-hero h1,.agm-contact-hero h1{font-size:clamp(35px,9.2vw,46px)}
+ .agm-services-hero p,.agm-industries-hero p,.agm-florida-hero p,.agm-contact-hero p{font-size:16px}
+ .agm-services-hero-photo{min-height:245px;height:245px}
+ .agm-services-thesis,.agm-services-pillar-wrap,.agm-services-system,.agm-services-choice,.agm-services-process,.agm-services-final,.agm-industries-context,.agm-industries-gallery,.agm-industries-journeys,.agm-industries-services,.agm-industries-final,.agm-florida-context,.agm-florida-industry,.agm-florida-services,.agm-florida-markets,.agm-florida-faq,.agm-florida-final,.agm-contact-main,.agm-contact-prepare,.agm-contact-faq{padding:59px 0}
+ .agm-services-pillar-wrap .agm-shell{width:calc(100% - 30px)}
+ .agm-services-pillar-photo{min-height:255px!important}
+ .agm-services-pillar-copy{padding:27px}
+ .agm-services-pillar-copy h3{font-size:29px}
+ .agm-services-system-flow,.agm-services-process .agm-shell>div,.agm-industries-gallery-grid,.agm-florida-industry .agm-shell>div{grid-template-columns:1fr}
+ .agm-services-choice-grid a{align-items:flex-start;flex-direction:column;gap:4px}
+ .agm-services-choice-grid a>span{justify-content:flex-start}
+ .agm-industries-feature{min-height:395px}
+ .agm-industries-journeys-list article{grid-template-columns:1fr;gap:8px}
+ .agm-industries-journeys-list p,.agm-industries-journeys-list span{font-size:14px}
+ .agm-florida-services-photo{aspect-ratio:16/10}
+ .agm-contact-form>.agm-form{padding:24px 18px}
+ .agm-contact-form .agm-form-grid{grid-template-columns:1fr!important}
+ .agm-contact-bottom .agm-shell{align-items:flex-start;flex-direction:column}
+}
+@media(prefers-reduced-motion:reduce){
+ .agm-services-pillar-photo img,.agm-industries-feature>img,.agm-florida-industry a{transition:none}
+ .agm-services-pillar:hover img,.agm-industries-feature:hover>img,.agm-florida-industry a:hover{transform:none}
+}
