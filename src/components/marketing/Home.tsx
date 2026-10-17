@@ -59,18 +59,16 @@ export default function Home() {
       </div>
     </section>
 
-    <section className="agm-v2-services" id="services">
+    <section className="agm-v3-services" id="services">
       <div className="agm-shell">
-        <div className="agm-v2-heading agm-v2-heading-light">
-          <div><span className="agm-eyebrow agm-eyebrow-light">OUR GROWTH SYSTEMS</span><h2>Connected capabilities.<br/><em>Built to work together.</em></h2></div>
-          <div><p>Search, website experience, automation and demand generation are stronger when they share one commercial direction.</p><Link href="/services/" className="agm-v2-light-link">View all services <ArrowUpRight size={16}/></Link></div>
+        <div className="agm-v2-heading">
+          <div><span className="agm-eyebrow">OUR GROWTH SYSTEMS</span><h2>Connected capabilities.<br/><em>Built to work together.</em></h2></div>
+          <div><p>Search, website experience, automation and demand generation are stronger when they share one commercial direction.</p><Link href="/services/" className="agm-text-link">View all services <ArrowUpRight size={16}/></Link></div>
         </div>
-        <div className="agm-v2-service-list">
-          {services.map((s, i) => <Link href={s.href} className="agm-v2-service-row" key={s.title}>
-            <span className="agm-v2-service-num">0{i+1}</span>
-            <span className="agm-v2-service-icon"><s.icon size={24}/></span>
-            <div><h3>{s.title}</h3><p>{s.short}</p></div>
-            <span className="agm-v2-service-arrow"><ArrowUpRight size={22}/></span>
+        <div className="agm-v3-service-grid">
+          {services.map((s, i) => <Link href={s.href} className="agm-v3-service-card" key={s.title}>
+            <div className="agm-v3-service-image"><Image src={[photos.engineering,photos.architecture,photos.drafting,photos.construction][i]} alt={s.title} fill sizes="(max-width:700px) 100vw, 50vw" className="agm-img-cover"/><span className="agm-v3-service-number">0{i+1}</span></div>
+            <div className="agm-v3-service-body"><span className="agm-v3-service-icon"><s.icon size={22}/></span><h3>{i===0?'SEO + AI Visibility':i===2?'AI Automation':i===3?'Paid Media & Social':s.title}</h3><p>{s.short}</p><span className="agm-v3-service-link">Explore service <ArrowUpRight size={17}/></span></div>
           </Link>)}
         </div>
       </div>
@@ -146,6 +144,13 @@ export default function Home() {
           <div className="agm-v2-form-aside"><span className="agm-eyebrow agm-eyebrow-light">AEC GROWTH AUDIT</span><h2>Find the opportunities hiding in plain sight.</h2><p>A human-reviewed starting point for your website, visibility and lead experience. No fake instant score. No guaranteed rankings.</p><div><span><SearchCheck/>Website & search review</span><span><UsersRound/>Buyer journey review</span><span><BarChart3/>Practical next-step discussion</span></div></div>
           <InquiryForm />
         </div>
+      </div>
+    </section>
+
+    <section className="agm-v3-reviews" aria-label="Client reviews">
+      <div className="agm-shell agm-v3-review-shell">
+        <div><span className="agm-eyebrow agm-eyebrow-light">CLIENT REVIEWS</span><h2>Real feedback belongs here.</h2><p>This component is ready for approved AEC Growth Media testimonials. We will not publish invented client names, star ratings or outcomes.</p></div>
+        <div className="agm-v3-review-placeholder"><span>VERIFIED REVIEWS ONLY</span><blockquote>Approved client feedback will appear here with the client name, organization and source when permission is available.</blockquote><div><ShieldCheck size={20}/><span>Evidence before claims</span></div></div>
       </div>
     </section>
 
