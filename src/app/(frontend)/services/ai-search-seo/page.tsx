@@ -151,9 +151,7 @@ export default function SEOAIServicePage(){
    <div className="agm-svc-steps">{process.map((x,i)=><article key={x[0]} data-reveal style={{'--reveal-delay':`${i*90}ms`} as React.CSSProperties}><span>{x[0]}</span><h3>{x[1]}</h3><p>{x[2]}</p>{i<3&&<ArrowRight className="agm-svc-step-arrow"/>}</article>)}</div>
   </div></section>
 
-  <section className="agm-svc-projects"><div className="agm-shell"><div className="agm-svc-project-head" data-reveal><h2>Practical work behind stronger digital experiences.</h2><p>Implementation examples only. Results claims are shown only when independently verified and approved.</p></div>
-   <div className="agm-svc-project-scroll">{projects.map((x,i)=><article key={x[0]} data-reveal><div className="agm-svc-project-image"><Image src={x[3]} alt="" fill sizes="(max-width:700px) 88vw, 46vw" className="agm-img-cover"/></div><span>{x[0]}</span><h3>{x[1]}</h3><p>{x[2]}</p><small>IMPLEMENTATION PROJECT</small></article>)}</div>
-  </div></section>
+  
 
   <section className="agm-svc-faq"><div className="agm-shell agm-svc-faq-grid"><div data-reveal><h2>Answers to the questions AEC firms ask before investing in SEO.</h2><p>Clear answers about scope, measurement, timing and fit before an engagement begins.</p></div>
    <div className="agm-svc-faq-list agm-svc-numbered-faq" data-reveal>{faqs.map(f=><details key={f[0]}><summary><b>{f[0]}</b><strong>{f[1]}</strong><span>+</span></summary><div><p>{f[2]}</p></div></details>)}</div>
