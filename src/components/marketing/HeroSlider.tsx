@@ -11,7 +11,7 @@ export default function HeroSlider(){
   </div>
   <div className="agm-shell agm-v3-hero-layout">
    <div className="agm-v3-hero-copy" data-reveal>
-    <h1 id="agm-home-title">AI Search &amp; Digital Growth<br/>for Architecture, Engineering<br/><span>&amp; Construction Firms.</span></h1>
+    <h1 id="agm-home-title" className="agm-shared-hero-title">AI Search &amp; Digital Growth<br/>for Architecture, Engineering<br/><span>&amp; Construction Firms.</span></h1>
     <p>We help firms that design, engineer, permit and build get discovered, earn buyer trust and turn digital interest into qualified opportunities.</p>
     <div className="agm-v3-hero-actions">
      <Link className="agm-btn agm-btn-primary" href="/#audit">Get an AEC Growth Audit <ArrowUpRight size={18}/></Link>
