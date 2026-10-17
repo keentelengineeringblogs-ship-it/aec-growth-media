@@ -11,7 +11,7 @@ const nav = [
   {label:'Industries',href:'/industries/',submenu:[['Engineering Firms','/industries/engineering-firms/'],['Construction Companies','/industries/construction-companies/'],['Architecture Firms','/industries/architecture-firms/'],['Permit & Drafting','/industries/permit-drafting-companies/']]},
   {label:'Locations',href:'/locations/florida/',submenu:[['Florida','/locations/florida/']]},
   {label:'Case Studies',href:'/projects/'},
-  {label:'Resources',href:'/blog/',submenu:[['Insights & Articles','/blog/'],['Case Studies','/projects/']]},
+  {label:'Blogs',href:'/blog/'},
   {label:'About',href:'/about/'},
 ]
 
@@ -27,7 +27,7 @@ export default function Header(){
  useEffect(()=>()=>{if(closeTimer.current)clearTimeout(closeTimer.current)},[])
  const close=()=>{setOpen(false);setDesktopMenu(null)}
  const openDesktop=(label:string)=>{if(closeTimer.current)clearTimeout(closeTimer.current);setDesktopMenu(label)}
- const scheduleClose=()=>{if(closeTimer.current)clearTimeout(closeTimer.current);closeTimer.current=setTimeout(()=>setDesktopMenu(null),140)}
+ const scheduleClose=()=>{if(closeTimer.current)clearTimeout(closeTimer.current);closeTimer.current=setTimeout(()=>setDesktopMenu(null),240)}
  return <header className={'agm-header agm-hf-header'+(scrolled?' is-scrolled':'')}>
    <div className="agm-hf-utility">
     <div className="agm-shell agm-hf-utility-inner">
@@ -39,7 +39,7 @@ export default function Header(){
     <div className="agm-shell agm-hf-nav-inner">
      <Link className="agm-brand agm-hf-brand" href="/" onClick={close} aria-label="AEC Growth Media home"><Image src="/brand/logo.svg" alt="AEC Growth Media" width={1000} height={205} priority/></Link>
      <nav className={'agm-nav agm-hf-menu'+(open?' is-open':'')} aria-label="Main navigation">
-      {nav.map(item=><div className="agm-nav-entry agm-hf-nav-entry" key={item.label} onMouseEnter={()=>{if(item.submenu&&window.matchMedia('(hover: hover) and (min-width: 921px)').matches)openDesktop(item.label)}} onMouseLeave={()=>{if(window.matchMedia('(hover: hover) and (min-width: 921px)').matches)scheduleClose()}}>{item.submenu?<details open={desktopMenu===item.label} onKeyDown={(e)=>{if(e.key==='Escape'){setDesktopMenu(null);(e.currentTarget.querySelector('summary') as HTMLElement)?.focus()}}}><summary aria-expanded={desktopMenu===item.label} onClick={(e)=>{e.preventDefault();setDesktopMenu(desktopMenu===item.label?null:item.label)}}>{item.label}<ChevronDown size={13}/></summary><div className="agm-nav-popover" onMouseEnter={()=>openDesktop(item.label)} onMouseLeave={scheduleClose}><Link href={item.href} className="agm-hf-view-all" onClick={close}>View all {item.label.toLowerCase()} <ArrowRight size={14}/></Link>{item.submenu.map(x=><Link key={x[1]} href={x[1]} onClick={close}>{x[0]}</Link>)}</div></details>:<Link href={item.href} onClick={close}>{item.label}</Link>}</div>)}
+      {nav.map(item=><div className="agm-nav-entry agm-hf-nav-entry" key={item.label} onMouseEnter={()=>{if(item.submenu&&window.matchMedia('(hover: hover) and (min-width: 921px)').matches)openDesktop(item.label)}} onMouseLeave={()=>{if(window.matchMedia('(hover: hover) and (min-width: 921px)').matches)scheduleClose()}} onFocusCapture={()=>{if(item.submenu&&window.innerWidth>920)openDesktop(item.label)}}>{item.submenu?<details open={desktopMenu===item.label} onKeyDown={(e)=>{if(e.key==='Escape'){setDesktopMenu(null);(e.currentTarget.querySelector('summary') as HTMLElement)?.focus()}}}><summary aria-expanded={desktopMenu===item.label} onClick={(e)=>{e.preventDefault();setDesktopMenu(desktopMenu===item.label?null:item.label)}}>{item.label}<ChevronDown size={13}/></summary><div className="agm-nav-popover" onMouseEnter={()=>{if(window.matchMedia('(hover: hover) and (min-width: 921px)').matches)openDesktop(item.label)}}><Link href={item.href} className="agm-hf-view-all" onClick={close}>View all {item.label.toLowerCase()} <ArrowRight size={14}/></Link>{item.submenu.map(x=><Link key={x[1]} href={x[1]} onClick={close}>{x[0]}</Link>)}</div></details>:<Link href={item.href} onClick={close}>{item.label}</Link>}</div>)}
       <Link className="agm-mobile-cta" href="/#audit" onClick={close}>Get an Audit <ArrowRight size={16}/></Link>
      </nav>
      <Link href="/#audit" className="agm-hf-cta">Get an Audit <ArrowRight size={17}/></Link>
