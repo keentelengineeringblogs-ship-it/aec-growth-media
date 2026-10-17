@@ -89,9 +89,22 @@ export default function SEOAIServicePage(){
    <div className="agm-shell agm-svc-hero-inner" data-reveal>
     <nav className="agm-svc-breadcrumb" aria-label="Breadcrumb"><Link href="/">Home</Link><span>/</span><Link href="/services/">Services</Link><span>/</span><b>SEO + AI Visibility</b></nav>
     <span className="agm-svc-label">SEO + AI SEARCH VISIBILITY <i/></span>
-    <h1>SEO + AI Visibility<br/><em>for AEC Companies.</em></h1>
+    <h1 className="agm-shared-hero-title">SEO + AI Visibility<br/><em>for AEC Companies.</em></h1>
     <p>Help architecture, engineering, construction, and permit/drafting companies become easier to discover, communicate their expertise, and turn qualified search interest into real business opportunities.</p>
     <div className="agm-svc-actions"><Link href="#audit" className="agm-btn agm-btn-primary">Get an AEC Growth Audit <ArrowRight size={17}/></Link><Link href="#service-scope" className="agm-btn agm-btn-outline-white">Explore Our SEO Services <ArrowRight size={17}/></Link></div>
+   </div>
+  </section>
+
+  <section className="agm-svc-buyer-intro" aria-labelledby="agm-buyer-journey-heading">
+   <div className="agm-shell agm-svc-buyer-grid">
+    <div className="agm-svc-buyer-copy" data-reveal>
+     <span className="agm-svc-label">BUILT FOR AEC BUYER JOURNEYS <i/></span>
+     <h2 id="agm-buyer-journey-heading">Search visibility starts with understanding how your clients choose.</h2>
+     <p>AEC buyers often research services, professional qualifications, relevant projects and technical expertise before contacting a firm. Architecture, engineering, construction and permitting businesses need more than generic keywords.</p>
+     <p>Our SEO + AI Visibility approach connects useful content, technical website foundations, credible project evidence and clear inquiry paths to meaningful business opportunities.</p>
+     <div className="agm-svc-buyer-points"><span>Industry-specific search strategy</span><span>Stronger technical credibility</span><span>Clearer paths to qualified inquiries</span></div>
+    </div>
+    <div className="agm-svc-buyer-photo" data-reveal><Image src={photos.engineering} alt="AEC professionals reviewing technical plans" fill sizes="(max-width: 800px) 100vw, 48vw" className="agm-img-cover"/></div>
    </div>
   </section>
 
@@ -102,7 +115,7 @@ export default function SEOAIServicePage(){
     <div className="agm-svc-overview-benefits">{['Improve discoverability in relevant search results.','Help qualified buyers understand your expertise.','Strengthen trust through useful, credible information.','Create clearer paths from discovery to inquiry.'].map(x=><span key={x}><CheckCircle2/>{x}</span>)}</div>
     <div className="agm-svc-overview-image"><Image src={photos.engineering} alt="AEC professionals reviewing building plans" fill sizes="(max-width:900px) 100vw, 52vw" className="agm-img-cover"/></div>
    </div>
-   <div className="agm-svc-form agm-svc-compact-form" data-reveal><InquiryForm compact/></div>
+   <div className="agm-svc-form agm-svc-compact-form" data-reveal><InquiryForm compact defaultService="SEO + AI Visibility" sourcePage="seo-service"/></div>
   </div></section>
 
   <section className="agm-svc-different"><div className="agm-shell">
