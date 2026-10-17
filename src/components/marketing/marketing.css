@@ -208,3 +208,12 @@ h1,h2,h3,h4,p{margin-top:0}h1,h2,h3,h4{font-family:Manrope,'DM Sans',Arial,sans-
 /* Client review area — no fabricated testimonials */
 .agm-v5-reviews{background:#fff}.agm-v5-review-placeholder{min-height:260px;border-radius:14px;background:var(--agm-deep);padding:42px 46px;display:flex;align-items:center;justify-content:space-between;gap:40px;position:relative;overflow:hidden}.agm-v5-review-placeholder:after{content:"";position:absolute;right:-70px;bottom:-100px;width:340px;height:240px;border:1px solid rgba(255,255,255,.08);transform:rotate(-18deg)}.agm-v5-review-placeholder>div{position:relative;z-index:1;max-width:680px}.agm-v5-review-placeholder>div>span{font:800 10px Manrope,sans-serif;letter-spacing:.14em;color:var(--agm-copper)}.agm-v5-review-placeholder h3{color:#fff;font-size:clamp(25px,2.6vw,36px);margin:10px 0 9px}.agm-v5-review-placeholder p{color:#c8d7df;margin:0;max-width:620px}.agm-v5-review-placeholder>.agm-btn{position:relative;z-index:1;background:var(--agm-copper);color:var(--agm-navy);flex:none}
 @media(max-width:700px){.agm-v5-review-placeholder{padding:32px 25px;align-items:flex-start;flex-direction:column}.agm-v5-review-placeholder>.agm-btn{width:100%}}
+
+/* Hero viewport fit + seamless discipline scroller */
+.agm-v3-hero{height:calc(100svh - 118px);min-height:590px;max-height:none}
+.agm-v2-marquee{overflow:hidden}
+.agm-v2-marquee>div{width:max-content;display:flex;will-change:transform;animation:agm-v5-marquee-loop 24s linear infinite}
+@keyframes agm-v5-marquee-loop{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+@media(max-width:920px){.agm-v3-hero{height:calc(100svh - 102px);min-height:570px}}
+@media(max-width:620px){.agm-v3-hero{height:calc(100svh - 98px);min-height:560px}.agm-v2-marquee>div{animation-duration:20s}}
+@media(prefers-reduced-motion:reduce){.agm-v2-marquee>div{animation:none}}
