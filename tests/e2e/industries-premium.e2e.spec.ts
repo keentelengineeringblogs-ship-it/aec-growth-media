@@ -58,10 +58,17 @@ test.describe('Premium industries — content, layout and photography',()=>{
    await page.setViewportSize({width:variant.width,height:variant.height})
    for(const [route,slug] of pages){
     await page.goto(site+route,{waitUntil:'domcontentloaded'})
+    // Trigger native lazy image loads by scrolling rather than waiting for
+    // offscreen images that the browser deliberately has not requested.
     await page.evaluate(async()=>{
-     const imgs=Array.from(document.images)
-     await Promise.all(imgs.map(img=>img.complete?Promise.resolve():new Promise<void>(resolve=>{img.addEventListener('load',()=>resolve(),{once:true});img.addEventListener('error',()=>resolve(),{once:true})})))
+     const pause=(ms:number)=>new Promise(resolve=>setTimeout(resolve,ms))
+     for(let y=0;y<document.documentElement.scrollHeight;y+=Math.max(500,innerHeight-150)){
+      scrollTo(0,y)
+      await pause(80)
+     }
+     scrollTo(0,0)
     })
+    await page.waitForTimeout(350)
     await page.screenshot({path:`test-results/${slug}-${variant.name}-full.png`,fullPage:true,animations:'disabled'})
    }
   }
