@@ -88,7 +88,6 @@ export default function SEOAIServicePage(){
    <Image src={photos.heroTwo} alt="Contemporary commercial construction project" fill priority sizes="100vw" className="agm-img-cover"/><div className="agm-svc-hero-overlay"/>
    <div className="agm-shell agm-svc-hero-inner" data-reveal>
     <nav className="agm-svc-breadcrumb" aria-label="Breadcrumb"><Link href="/">Home</Link><span>/</span><Link href="/services/">Services</Link><span>/</span><b>SEO + AI Visibility</b></nav>
-    <span className="agm-svc-label">SEO + AI SEARCH VISIBILITY <i/></span>
     <h1 className="agm-shared-hero-title">SEO + AI Visibility<br/><em>for AEC Companies.</em></h1>
     <p>Help architecture, engineering, construction, and permit/drafting companies become easier to discover, communicate their expertise, and turn qualified search interest into real business opportunities.</p>
     <div className="agm-svc-actions"><Link href="#audit" className="agm-btn agm-btn-primary">Get an AEC Growth Audit <ArrowRight size={17}/></Link><Link href="#service-scope" className="agm-btn agm-btn-outline-white">Explore Our SEO Services <ArrowRight size={17}/></Link></div>
@@ -98,7 +97,6 @@ export default function SEOAIServicePage(){
   <section className="agm-svc-buyer-intro" aria-labelledby="agm-buyer-journey-heading">
    <div className="agm-shell agm-svc-buyer-grid">
     <div className="agm-svc-buyer-copy" data-reveal>
-     <span className="agm-svc-label">BUILT FOR AEC BUYER JOURNEYS <i/></span>
      <h2 id="agm-buyer-journey-heading">Search visibility starts with understanding how your clients choose.</h2>
      <p>AEC buyers often research services, professional qualifications, relevant projects and technical expertise before contacting a firm. Architecture, engineering, construction and permitting businesses need more than generic keywords.</p>
      <p>Our SEO + AI Visibility approach connects useful content, technical website foundations, credible project evidence and clear inquiry paths to meaningful business opportunities.</p>
@@ -109,7 +107,7 @@ export default function SEOAIServicePage(){
   </section>
 
   <section className="agm-svc-intro" id="audit"><div className="agm-shell agm-svc-overview-grid">
-   <div className="agm-svc-overview-left" data-reveal><span className="agm-svc-label">WHY IT MATTERS <i/></span><h2>Be where your next<br/>project is searching.</h2>
+   <div className="agm-svc-overview-left" data-reveal><h2>Be where your next<br/>project is searching.</h2>
     <p>AEC buyers often research potential partners long before making an inquiry. They compare technical capabilities, project experience, locations served, professional credentials, and evidence of expertise.</p>
     <p>Our search visibility approach helps firms present the right information at the right stage of that decision-making process.</p>
     <div className="agm-svc-overview-benefits">{['Improve discoverability in relevant search results.','Help qualified buyers understand your expertise.','Strengthen trust through useful, credible information.','Create clearer paths from discovery to inquiry.'].map(x=><span key={x}><CheckCircle2/>{x}</span>)}</div>
@@ -119,54 +117,49 @@ export default function SEOAIServicePage(){
   </div></section>
 
   <section className="agm-svc-different"><div className="agm-shell">
-   <div className="agm-svc-editorial-head" data-reveal><span className="agm-svc-label">INDUSTRY-SPECIFIC SEARCH <i/></span><h2>AEC buyers don&apos;t search like ordinary consumers.</h2><p>Architecture, engineering, construction, and permitting decisions involve technical requirements, professional qualifications, project scope, geographic relevance, budgets and long evaluation cycles. A useful search strategy must help buyers find specific services and understand whether a firm fits their project.</p></div>
+   <div className="agm-svc-editorial-head" data-reveal><h2>AEC buyers don&apos;t search like ordinary consumers.</h2><p>Architecture, engineering, construction, and permitting decisions involve technical requirements, professional qualifications, project scope, geographic relevance, budgets and long evaluation cycles. A useful search strategy must help buyers find specific services and understand whether a firm fits their project.</p></div>
    <div className="agm-svc-different-grid">{different.map((x,i)=><article key={x[0]} data-reveal style={{'--reveal-delay':`${i*90}ms`} as React.CSSProperties}><span>{x[0]}</span><h3>{x[1]}</h3><p>{x[2]}</p></article>)}</div>
   </div></section>
 
   <section className="agm-svc-benefits"><div className="agm-shell agm-svc-benefit-grid">
-   <div data-reveal><span className="agm-svc-label">KEY BENEFITS <i/></span><h2>A smarter approach to visibility and growth.</h2><p>Build a stronger digital presence around the information, credibility and conversion opportunities that matter most to your future clients.</p></div>
+   <div data-reveal><h2>A smarter approach to visibility and growth.</h2><p>Build a stronger digital presence around the information, credibility and conversion opportunities that matter most to your future clients.</p></div>
    <div className="agm-svc-timeline">{benefits.map((b,i)=><article key={b[0]} className={`agm-svc-benefit b${i+1}`} data-reveal style={{'--reveal-delay':`${i*90}ms`} as React.CSSProperties}><span>{b[0]}</span><h3>{b[1]}</h3><p>{b[2]}</p></article>)}</div>
   </div></section>
 
   <section className="agm-svc-scope" id="service-scope"><div className="agm-shell agm-svc-scope-grid">
    <div className="agm-svc-scope-image" data-reveal><Image src={photos.work} alt="Commercial AEC project" fill sizes="(max-width:800px) 100vw, 48vw" className="agm-img-cover"/></div>
-   <div data-reveal><span className="agm-svc-label">WHAT WE DO <i/></span><h2>Complete SEO + AI visibility for AEC firms.</h2><p>We combine technical website improvements, content strategy, local market relevance, AI search visibility assessment and measurement into one coordinated search visibility program.</p>
+   <div data-reveal><h2>Complete SEO + AI visibility for AEC firms.</h2><p>We combine technical website improvements, content strategy, local market relevance, AI search visibility assessment and measurement into one coordinated search visibility program.</p>
    <div className="agm-svc-scope-list">{scope.map((s,i)=><div key={s[0]}><b>{s[0]}</b><span><strong>{s[1]}</strong><small>{s[2]}</small></span></div>)}</div>
    <Link href="#audit" className="agm-text-link agm-svc-inline-cta">Discuss Your Search Strategy <ArrowRight size={16}/></Link></div>
   </div></section>
 
-  <section className="agm-svc-method"><div className="agm-shell"><div className="agm-svc-method-head" data-reveal><span className="agm-svc-label agm-svc-label-light">OUR METHODOLOGY <i/></span><h2>From technical foundations to meaningful opportunities.</h2></div>
+  <section className="agm-svc-method"><div className="agm-shell"><div className="agm-svc-method-head" data-reveal><h2>From technical foundations to meaningful opportunities.</h2></div>
    <div className="agm-svc-method-flow">{methodology.map((x,i)=><article key={x[0]} data-reveal style={{'--reveal-delay':`${i*70}ms`} as React.CSSProperties}><span>{x[0]}</span><h3>{x[1]}</h3><p>{x[2]}</p></article>)}</div>
   </div></section>
 
-  <section className="agm-svc-industries"><div className="agm-shell"><div className="agm-svc-industry-head" data-reveal><div><span className="agm-svc-label">INDUSTRY FOCUS <i/></span><h2>Search strategies built for the AEC industry.</h2></div><p>Industry context shapes how buyers search, evaluate expertise and move toward an inquiry.</p></div>
+  <section className="agm-svc-industries"><div className="agm-shell"><div className="agm-svc-industry-head" data-reveal><div><h2>Search strategies built for the AEC industry.</h2></div><p>Industry context shapes how buyers search, evaluate expertise and move toward an inquiry.</p></div>
    <div className="agm-svc-industry-grid agm-svc-industry-grid-four">{industries.map((x,i)=><Link href={x[3]} key={x[0]} className="agm-svc-industry-overlay-card" data-reveal style={{'--reveal-delay':`${i*70}ms`} as React.CSSProperties}><Image src={x[2]} alt={x[0]} fill sizes="(max-width:700px) 100vw, 25vw" className="agm-img-cover"/><span className="agm-svc-card-shade"/><div><h3>{x[0]}</h3><p>{x[1]}</p><ArrowRight/></div></Link>)}</div>
   </div></section>
 
   <section className="agm-svc-receive"><div className="agm-shell agm-svc-receive-grid">
-   <div data-reveal><span className="agm-svc-label">WHAT YOU RECEIVE <i/></span><h2>Clear work. Useful deliverables. Accountable execution.</h2><p>Expected deliverables are defined around the agreed engagement rather than treated as a one-size-fits-all package.</p><small>Final deliverables depend on the agreed scope of work.</small></div>
+   <div data-reveal><h2>Clear work. Useful deliverables. Accountable execution.</h2><p>Expected deliverables are defined around the agreed engagement rather than treated as a one-size-fits-all package.</p><small>Final deliverables depend on the agreed scope of work.</small></div>
    <div className="agm-svc-deliverables">{deliverables.map((x,i)=><article key={x[0]} data-reveal style={{'--reveal-delay':`${i*55}ms`} as React.CSSProperties}><span>{String(i+1).padStart(2,'0')}</span><div><h3>{x[0]}</h3><p>{x[1]}</p></div></article>)}</div>
   </div></section>
 
   <section className="agm-svc-process"><Image src={photos.process} alt="" fill sizes="100vw" className="agm-img-cover"/><div className="agm-svc-process-overlay"/><div className="agm-shell agm-svc-process-inner">
-   <div className="agm-svc-process-title" data-reveal><span className="agm-svc-label agm-svc-label-light">OUR PROCESS <i/></span><h2>A clear path from assessment to improvement.</h2><p>One connected delivery process from discovery through measurement and ongoing improvement.</p></div>
+   <div className="agm-svc-process-title" data-reveal><h2>A clear path from assessment to improvement.</h2><p>One connected delivery process from discovery through measurement and ongoing improvement.</p></div>
    <div className="agm-svc-steps">{process.map((x,i)=><article key={x[0]} data-reveal style={{'--reveal-delay':`${i*90}ms`} as React.CSSProperties}><span>{x[0]}</span><h3>{x[1]}</h3><p>{x[2]}</p>{i<3&&<ArrowRight className="agm-svc-step-arrow"/>}</article>)}</div>
   </div></section>
 
-  <section className="agm-svc-projects"><div className="agm-shell"><div className="agm-svc-project-head" data-reveal><span className="agm-svc-label">RELEVANT WORK <i/></span><h2>Practical work behind stronger digital experiences.</h2><p>Implementation examples only. Results claims are shown only when independently verified and approved.</p></div>
+  <section className="agm-svc-projects"><div className="agm-shell"><div className="agm-svc-project-head" data-reveal><h2>Practical work behind stronger digital experiences.</h2><p>Implementation examples only. Results claims are shown only when independently verified and approved.</p></div>
    <div className="agm-svc-project-scroll">{projects.map((x,i)=><article key={x[0]} data-reveal><div className="agm-svc-project-image"><Image src={x[3]} alt="" fill sizes="(max-width:700px) 88vw, 46vw" className="agm-img-cover"/></div><span>{x[0]}</span><h3>{x[1]}</h3><p>{x[2]}</p><small>IMPLEMENTATION PROJECT</small></article>)}</div>
   </div></section>
 
-  <section className="agm-svc-measure"><div className="agm-shell agm-svc-measure-grid">
-   <div data-reveal><span className="agm-svc-label">PERFORMANCE &amp; MEASUREMENT <i/></span><h2>Know what is improving — and why it matters.</h2><p>Search performance should be connected to business goals. Rankings and impressions can help explain visibility, but they are not substitutes for qualified inquiries, proposals and revenue outcomes.</p></div>
-   <div className="agm-svc-report" data-reveal><div className="agm-svc-report-head"><span>VISIBILITY FRAMEWORK</span><b>Illustrative reporting structure</b></div>{measurement.map((x,i)=><div className="agm-svc-report-row" key={x[0]}><span>0{i+1}</span><div><strong>{x[0]}</strong><p>{x[1]}</p></div></div>)}</div>
-  </div></section>
-
-  <section className="agm-svc-faq"><div className="agm-shell agm-svc-faq-grid"><div data-reveal><span className="agm-svc-label">COMMON QUESTIONS <i/></span><h2>Answers to the questions AEC firms ask before investing in SEO.</h2><p>Clear answers about scope, measurement, timing and fit before an engagement begins.</p></div>
+  <section className="agm-svc-faq"><div className="agm-shell agm-svc-faq-grid"><div data-reveal><h2>Answers to the questions AEC firms ask before investing in SEO.</h2><p>Clear answers about scope, measurement, timing and fit before an engagement begins.</p></div>
    <div className="agm-svc-faq-list agm-svc-numbered-faq" data-reveal>{faqs.map(f=><details key={f[0]}><summary><b>{f[0]}</b><strong>{f[1]}</strong><span>+</span></summary><div><p>{f[2]}</p></div></details>)}</div>
   </div></section>
 
-  <section className="agm-svc-final"><Image src={photos.architecture} alt="" fill sizes="100vw" className="agm-img-cover"/><div className="agm-svc-final-overlay"/><div className="agm-shell agm-svc-final-inner" data-reveal><div><span>READY TO IMPROVE YOUR VISIBILITY?</span><h2>Build a search presence as credible as the work you deliver.</h2><p>Start with a practical conversation about your website, market, search visibility and opportunities to reach the right AEC buyers.</p></div><div className="agm-svc-final-actions"><Link href="#audit" className="agm-btn agm-btn-primary">Request an AEC Growth Audit <ArrowRight size={17}/></Link><Link href="/services/" className="agm-btn agm-btn-outline-white">Explore Our Services</Link></div></div>
+  <section className="agm-svc-final agm-svc-final-separated"><Image src={photos.architecture} alt="" fill sizes="100vw" className="agm-img-cover"/><div className="agm-svc-final-overlay"/><div className="agm-shell agm-svc-final-inner" data-reveal><div><span>READY TO IMPROVE YOUR VISIBILITY?</span><h2>Build a search presence as credible as the work you deliver.</h2><p>Start with a practical conversation about your website, market, search visibility and opportunities to reach the right AEC buyers.</p></div><div className="agm-svc-final-actions"><Link href="#audit" className="agm-btn agm-btn-primary">Request an AEC Growth Audit <ArrowRight size={17}/></Link><Link href="/services/" className="agm-btn agm-btn-outline-white">Explore Our Services</Link></div></div>
   </section>
  </main>
 }
