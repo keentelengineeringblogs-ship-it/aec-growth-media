@@ -22,13 +22,12 @@ test.describe('AEC Growth Media site smoke QA', () => {
    expect(overflow).toBe(false)
   })
  }
- test('Desktop nav reveals premium dropdowns on hover and Resources links correctly',async ({page})=>{
+ test('Desktop nav reveals premium dropdowns on hover and Blogs links directly',async ({page})=>{
   await page.setViewportSize({width:1440,height:900})
   await page.goto('http://localhost:3000/')
   await page.getByRole('button',{name:'Services'}).hover()
   await expect(page.getByRole('link',{name:'SEO + AI Visibility'}).first()).toBeVisible()
-  await page.getByRole('button',{name:'Resources'}).hover()
-  await expect(page.getByRole('link',{name:'Blog / Insights'})).toHaveAttribute('href','/blog/')
+  await expect(page.getByRole('link',{name:'Blogs',exact:true})).toHaveAttribute('href','/blog/')
  })
  test('Shared AEC audit form preselects the relevant service on all four routes',async ({page})=>{
   const items:[string,string][]=[
