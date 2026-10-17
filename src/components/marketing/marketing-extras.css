@@ -218,3 +218,127 @@
  .agm-services-pillar-photo img,.agm-industries-feature>img,.agm-florida-industry a{transition:none}
  .agm-services-pillar:hover img,.agm-industries-feature:hover>img,.agm-florida-industry a:hover{transform:none}
 }
+
+
+/* Four AEC industry page variants share tokens, not monotonous card layouts. */
+.agm-industry-detail{overflow-x:clip;background:#fff}
+.agm-industry-detail section[id]{scroll-margin-top:120px}
+.agm-industry-detail h2{font-size:clamp(33px,3.5vw,46px);line-height:1.13}
+.agm-industry-detail p{font-size:16px;line-height:1.7}
+.agm-ind-detail-hero{background:var(--agm-deep);color:#fff;overflow:hidden}
+.agm-ind-detail-hero-grid{display:grid;grid-template-columns:minmax(0,1.08fr) minmax(0,.92fr);min-height:clamp(560px,calc(100svh - 118px),760px);gap:clamp(35px,5vw,75px);align-items:center}
+.agm-ind-detail-hero-copy{padding:75px 0}
+.agm-ind-detail-hero-copy nav{font-size:13px;color:#d4e1e7;margin-bottom:27px}
+.agm-ind-detail-hero-copy h1{font-size:clamp(43px,4.7vw,66px);line-height:1.06;letter-spacing:-.055em;color:#fff;max-width:780px;margin:0 0 23px}
+.agm-ind-detail-hero-copy p{font-size:18px;color:#d7e5ea;max-width:670px;margin-bottom:28px}
+.agm-ind-detail-hero-photo{position:relative;min-height:510px;height:100%;overflow:hidden}
+.agm-ind-detail-insight{padding:98px 0}
+.agm-ind-detail-insight-grid{display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:start}
+.agm-ind-detail-insight h2{max-width:570px;margin:0}
+.agm-ind-detail-insight p{font-size:18px;max-width:600px;margin:0}
+.agm-ind-detail-challenges{padding:85px 0;background:var(--agm-cloud)}
+.agm-ind-detail-challenges header{max-width:780px;margin-bottom:38px}
+.agm-ind-detail-challenge-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:25px}
+.agm-ind-detail-challenge-grid article{border-top:2px solid var(--agm-teal);padding:25px 18px 10px 0}
+.agm-ind-detail-challenge-grid span{font-size:12px;color:var(--agm-copper);font-weight:800}
+.agm-ind-detail-challenge-grid h3{font-size:23px;margin:12px 0}
+.agm-ind-detail-challenge-grid p{font-size:15px}
+.agm-ind-detail-services{padding:94px 0}
+.agm-ind-detail-services-intro{display:grid;grid-template-columns:1fr .8fr;gap:55px;margin-bottom:40px}
+.agm-ind-detail-services-intro h2{max-width:750px;margin:0}
+.agm-ind-detail-services-intro p{max-width:470px;margin:0}
+.agm-ind-detail-capabilities{border-top:1px solid var(--agm-border)}
+.agm-ind-detail-capabilities article{display:grid;grid-template-columns:60px minmax(0,1fr) 40px;gap:24px;align-items:start;border-bottom:1px solid var(--agm-border);padding:26px 0}
+.agm-ind-detail-capabilities b{color:var(--agm-teal);font-size:13px}
+.agm-ind-detail-capabilities h3{font-size:22px;margin:0 0 7px}
+.agm-ind-detail-capabilities p{font-size:15px;max-width:850px;margin:0}
+.agm-ind-detail-capabilities a{color:var(--agm-teal);transition:transform .2s}
+.agm-ind-detail-capabilities a:hover{transform:translateX(4px)}
+.agm-ind-detail-evidence{padding:0;background:var(--agm-deep);color:#fff}
+.agm-ind-detail-evidence>.agm-shell{display:grid;grid-template-columns:1fr 1fr;gap:clamp(35px,5vw,75px);align-items:center}
+.agm-ind-detail-evidence-photo{position:relative;aspect-ratio:1.05;min-height:440px;overflow:hidden}
+.agm-ind-detail-evidence-copy{padding:75px 0}
+.agm-ind-detail-evidence-copy h2{color:#fff}
+.agm-ind-detail-evidence-copy p{color:#d8e7ec}
+.agm-ind-detail-evidence-copy>div{display:flex;align-items:flex-start;gap:10px;margin:22px 0;font-size:14px;color:#dbe6eb}
+.agm-ind-detail-evidence-copy>div svg{color:var(--agm-copper);flex:none}
+.agm-ind-detail-evidence-copy .agm-text-link{color:var(--agm-copper)}
+.agm-ind-detail-process{padding:90px 0}
+.agm-ind-detail-process header{max-width:790px;margin-bottom:40px}
+.agm-ind-detail-process>.agm-shell>div{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:28px}
+.agm-ind-detail-process article{border-top:1px solid var(--agm-border);padding-top:18px}
+.agm-ind-detail-process article span{color:var(--agm-teal);font-size:13px;font-weight:800}
+.agm-ind-detail-process h3{font-size:21px;margin:15px 0 11px}
+.agm-ind-detail-process article p{font-size:14px}
+.agm-ind-detail-faq{background:var(--agm-cloud);padding:85px 0}
+.agm-ind-detail-faq h2{margin-bottom:25px;max-width:800px}
+.agm-ind-detail-faq .agm-shell>div{max-width:900px}
+.agm-ind-detail-faq details{border-bottom:1px solid var(--agm-border)}
+.agm-ind-detail-faq summary{list-style:none;display:flex;justify-content:space-between;align-items:center;gap:22px;padding:21px 0;cursor:pointer;color:var(--agm-navy);font-size:18px;font-weight:700}
+.agm-ind-detail-faq summary::-webkit-details-marker{display:none}
+.agm-ind-detail-faq summary span{font-size:24px;color:var(--agm-teal)}
+.agm-ind-detail-faq details[open] summary span{transform:rotate(45deg)}
+.agm-ind-detail-faq details>p{max-width:800px;font-size:15px;padding:0 20px 19px 0}
+.agm-ind-detail-audit{padding:92px 0}
+.agm-ind-detail-audit-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(440px,1fr);gap:65px;align-items:start}
+.agm-ind-detail-audit-grid>div:first-child{position:sticky;top:145px}
+.agm-ind-detail-audit-grid h2{max-width:590px}
+.agm-ind-detail-audit-grid>div:first-child>p{max-width:580px;font-size:17px}
+.agm-ind-detail-audit-grid .agm-form{max-width:none;width:100%;padding:30px;border:1px solid var(--agm-border);border-radius:12px;box-shadow:var(--agm-shadow)}
+.agm-ind-detail-audit-grid .agm-consent{display:flex!important;align-items:flex-start!important;gap:12px!important;white-space:normal!important}
+.agm-ind-detail-audit-grid .agm-consent input{flex:none!important;width:18px!important;height:18px!important;min-height:18px!important;margin:2px 0 0!important}
+.agm-ind-detail-audit-grid .agm-consent>span{white-space:normal!important;min-width:0!important}
+/* Different editorial art direction on each industry page */
+.agm-industry-detail--construction .agm-ind-detail-hero{position:relative;isolation:isolate}
+.agm-industry-detail--construction .agm-ind-detail-hero-grid{grid-template-columns:1fr}
+.agm-industry-detail--construction .agm-ind-detail-hero-copy{position:relative;z-index:2;max-width:890px}
+.agm-industry-detail--construction .agm-ind-detail-hero-photo{position:absolute;inset:0;z-index:-2;min-height:0}
+.agm-industry-detail--construction .agm-ind-detail-hero:after{content:'';position:absolute;inset:0;background:rgba(5,30,53,.78);z-index:-1}
+.agm-industry-detail--construction .agm-ind-detail-evidence>.agm-shell{grid-template-columns:1.08fr .92fr}
+.agm-industry-detail--architecture .agm-ind-detail-hero{background:var(--agm-cloud);color:var(--agm-navy)}
+.agm-industry-detail--architecture .agm-ind-detail-hero-copy nav,.agm-industry-detail--architecture .agm-ind-detail-hero-copy h1{color:var(--agm-navy)}
+.agm-industry-detail--architecture .agm-ind-detail-hero-copy p{color:var(--agm-muted)}
+.agm-industry-detail--architecture .agm-ind-detail-hero-grid{grid-template-columns:.92fr 1.08fr}
+.agm-industry-detail--architecture .agm-ind-detail-hero-photo{min-height:610px}
+.agm-industry-detail--architecture .agm-ind-detail-challenges{background:#fff}
+.agm-industry-detail--architecture .agm-ind-detail-evidence{background:var(--agm-navy)}
+.agm-industry-detail--drafting .agm-ind-detail-hero{background:var(--agm-cloud);color:var(--agm-navy)}
+.agm-industry-detail--drafting .agm-ind-detail-hero-copy nav,.agm-industry-detail--drafting .agm-ind-detail-hero-copy h1{color:var(--agm-navy)}
+.agm-industry-detail--drafting .agm-ind-detail-hero-copy p{color:var(--agm-muted)}
+.agm-industry-detail--drafting .agm-ind-detail-hero-photo{max-height:570px;border-radius:14px}
+.agm-industry-detail--drafting .agm-ind-detail-evidence{background:var(--agm-teal)}
+@media(max-width:950px){
+ .agm-ind-detail-hero-grid{grid-template-columns:1fr 1fr;gap:35px}
+ .agm-ind-detail-hero-photo{min-height:430px}
+ .agm-ind-detail-audit-grid{grid-template-columns:1fr 1fr;gap:30px}
+ .agm-ind-detail-evidence>.agm-shell{gap:35px}
+}
+@media(max-width:780px){
+ .agm-ind-detail-hero-grid,.agm-ind-detail-insight-grid,.agm-ind-detail-services-intro,.agm-ind-detail-evidence>.agm-shell,.agm-ind-detail-audit-grid,.agm-industry-detail--architecture .agm-ind-detail-hero-grid{grid-template-columns:1fr;gap:25px}
+ .agm-ind-detail-hero-grid{min-height:0}
+ .agm-ind-detail-hero-copy{padding:64px 0 25px}
+ .agm-ind-detail-hero-photo,.agm-industry-detail--architecture .agm-ind-detail-hero-photo{min-height:360px;max-height:420px}
+ .agm-industry-detail--construction .agm-ind-detail-hero-grid{min-height:550px}
+ .agm-industry-detail--construction .agm-ind-detail-hero-copy{padding:65px 0}
+ .agm-industry-detail--construction .agm-ind-detail-hero-photo{max-height:none}
+ .agm-ind-detail-insight-grid{gap:20px}
+ .agm-ind-detail-challenge-grid{grid-template-columns:1fr 1fr}
+ .agm-ind-detail-evidence-photo{aspect-ratio:16/9;min-height:320px}
+ .agm-ind-detail-evidence-copy{padding:30px 0 60px}
+ .agm-ind-detail-process>.agm-shell>div{grid-template-columns:1fr 1fr}
+ .agm-ind-detail-audit-grid>div:first-child{position:static}
+}
+@media(max-width:600px){
+ .agm-ind-detail-hero-copy h1{font-size:clamp(36px,9vw,47px)}
+ .agm-ind-detail-insight,.agm-ind-detail-challenges,.agm-ind-detail-services,.agm-ind-detail-process,.agm-ind-detail-faq,.agm-ind-detail-audit{padding:60px 0}
+ .agm-ind-detail-hero-photo{min-height:290px!important}
+ .agm-industry-detail--construction .agm-ind-detail-hero-photo{max-height:none;min-height:0!important}
+ .agm-ind-detail-challenge-grid,.agm-ind-detail-process>.agm-shell>div{grid-template-columns:1fr}
+ .agm-ind-detail-services-intro{gap:10px}
+ .agm-ind-detail-capabilities article{grid-template-columns:36px 1fr 24px;gap:12px}
+ .agm-ind-detail-capabilities h3{font-size:19px}
+ .agm-ind-detail-audit-grid .agm-form{padding:24px 16px}
+ .agm-ind-detail-audit-grid .agm-form-grid{grid-template-columns:1fr!important}
+ .agm-ind-detail-evidence-photo{min-height:260px}
+}
+@media(prefers-reduced-motion:reduce){.agm-ind-detail-capabilities a{transition:none}.agm-ind-detail-capabilities a:hover{transform:none}}
