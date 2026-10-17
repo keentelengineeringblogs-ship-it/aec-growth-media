@@ -418,3 +418,21 @@ h1,h2,h3,h4,p{margin-top:0}h1,h2,h3,h4{font-family:Manrope,'DM Sans',Arial,sans-
    min-height:360px;
  }
 }
+
+
+/* Paid Media & Social service page */
+.agm-paid-page .agm-paid-benefits{
+ position:relative;isolation:isolate;overflow:hidden;background:var(--agm-deep);color:#fff;
+}
+.agm-paid-page .agm-paid-benefits:before{
+ content:"";position:absolute;inset:0;z-index:-2;
+ background:url("https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&w=1800&q=82") center/cover no-repeat;
+}
+.agm-paid-page .agm-paid-benefits:after{content:"";position:absolute;inset:0;z-index:-1;background:rgba(7,27,43,.86)}
+.agm-paid-page .agm-paid-benefits h2{color:#fff}.agm-paid-page .agm-paid-benefits>div>div:first-child p{color:rgba(255,255,255,.82)}
+.agm-paid-page .agm-svc-benefit{background:rgba(255,255,255,.96)}
+.agm-paid-page .agm-svc-benefit h3{color:var(--agm-navy)}.agm-paid-page .agm-svc-benefit p{color:var(--agm-muted)}
+.agm-paid-page .agm-svc-scope-list{grid-template-columns:1fr 1fr}
+.agm-paid-page .agm-svc-final-separated{margin-top:72px;margin-bottom:72px}
+@media(max-width:800px){.agm-paid-page .agm-svc-scope-list{grid-template-columns:1fr}}
+@media(max-width:560px){.agm-paid-page .agm-svc-final-separated{margin-top:52px;margin-bottom:52px}}
