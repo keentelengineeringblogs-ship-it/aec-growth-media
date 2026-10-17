@@ -20,7 +20,7 @@ export default function AboutPage(){
    <div className="agm-shell agm-about-hero-copy" data-reveal>
     <div className="agm-about-breadcrumb"><Link href="/">Home</Link><b>›</b><span>About Us</span></div>
     <i className="agm-about-accent"/>
-    <h1>About<br/><em>AEC Growth Media</em></h1>
+    <h1 className="agm-shared-hero-title">About<br/><em>AEC Growth Media</em></h1>
     <p>The AI Search &amp; Digital Growth partner for architecture, engineering, construction, and permitting companies.</p>
    </div>
   </section>
