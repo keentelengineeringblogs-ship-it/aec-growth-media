@@ -5,7 +5,7 @@ async function startPreview(){
  const bytes=Uint8Array.from(atob(files.join('').trim()),c=>c.charCodeAt(0));
  const stream=new Blob([bytes]).stream().pipeThrough(new DecompressionStream('gzip'));
  siteBundle=JSON.parse(await new Response(stream).text());
- const css=document.createElement('style');css.textContent=siteBundle.css+'\n.hero h1{font-size:clamp(60px,7vw,100px);max-width:1050px;}';document.head.append(css);
+ const css=document.createElement('style');css.textContent=siteBundle.css+"\n.hero{display:block;min-height:0}\n.hero>.container{padding-top:90px;padding-bottom:200px}\n.hero h1{font-size:clamp(57px,6.15vw,94px);line-height:1;max-width:1060px;letter-spacing:-.025em;margin:27px 0 24px}\n.hero-copy{margin-bottom:0}\n.hero-cta{position:relative;z-index:2;margin-top:28px;align-items:center}\n.hero-note{z-index:1}\n.hero-note .container{padding:0!important}\n.hero-note-grid>div{min-width:0}\n.hero-note-grid small{line-height:1.4}\n@media(min-width:921px) and (max-width:1180px){\n.nav-links{display:none}.menu-trigger{display:block}.header-cta{margin-left:auto}\n.menu-panel{display:block;position:fixed;top:94px;left:0;right:0;bottom:0;height:calc(100dvh - 94px);background:#fff;overflow:auto;padding:30px max(28px,calc((100vw - 760px)/2)) 50px;z-index:100;transform:translateX(105%);visibility:hidden;transition:transform .3s,visibility .3s}\n.menu-panel.open{visibility:visible;transform:none}\n.menu-panel a{display:block;padding:16px 0;font-family:var(--head);font-size:30px;line-height:1.1;border-bottom:1px solid #eee;text-transform:uppercase}\n.menu-panel .button{margin-top:24px;font-family:var(--body);font-size:12px;color:#fff;justify-content:center}}\n@media(max-width:920px){.hero>.container{padding-top:82px;padding-bottom:190px}.hero h1{font-size:clamp(54px,7.7vw,78px);line-height:1.01;max-width:720px}}\n@media(max-width:640px){.hero>.container{padding-top:77px;padding-bottom:191px}.hero h1{font-size:clamp(41px,10.6vw,64px);line-height:1.03;max-width:100%;margin:22px 0 22px;letter-spacing:-.04em}.hero-cta{margin-top:24px;gap:10px}.hero-cta .button{min-height:52px}}\n@media(max-width:390px){.hero h1{font-size:clamp(39px,10vw,43px);line-height:1.05}}\n";document.head.append(css);
  draw();
 }
 function draw(){
@@ -15,7 +15,7 @@ function draw(){
  const p=siteBundle.pages[key];
  document.title=p.title||'Darius Construction LLC | San Antonio';
  let meta=document.querySelector('meta[name="description"]');if(meta)meta.content=p.description||meta.content;
- document.body.className='';document.body.innerHTML=p.body.replaceAll('assets/darius-logo.webp','assets/darius-logo.png');
+ document.body.className='';document.body.innerHTML=p.body.replaceAll('assets/darius-logo.webp','assets/darius-logo.png').replace('PRECISION.</span><span class="red-underline">FINISHED','PRECISION.</span><br><span class="red-underline">FINISHED');
  try{(new Function(siteBundle.js))()}catch(e){console.warn('Preview interactions:',e)}
  for(const script of document.body.querySelectorAll('script:not([src])')){try{(new Function(script.textContent))()}catch(e){console.warn('Detail preview:',e)}}
  if(location.hash){const id=decodeURIComponent(location.hash.slice(1));requestAnimationFrame(()=>document.getElementById(id)?.scrollIntoView({behavior:'smooth'}))}else{window.scrollTo(0,0)}
