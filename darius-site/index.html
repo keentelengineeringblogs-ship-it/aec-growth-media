@@ -1,0 +1,31 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#171717"><title>Darius Construction LLC | General Contractor in San Antonio, TX</title><meta name="description" content="Darius Construction LLC provides general construction, home remodeling, kitchen and bathroom renovations, and residential improvement services in San Antonio, Texas."><style>html{background:#171717}body{margin:0;font-family:Arial,sans-serif;background:#171717;color:#fff}.loading{min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;gap:20px}.loading strong{font-size:32px}.loading span{color:#dd3438}.loading p{color:#bbb}body:not(:has(.loading)){background:#fff;color:#171717}</style></head><body><div class="loading"><strong>DARIUS <span>CONSTRUCTION</span></strong><p>Loading the website preview…</p></div><script>
+let siteBundle=null;
+async function startPreview(){
+ const files=await Promise.all(Array.from({length:7},async(_,i)=>{const r=await fetch('data/'+String(i).padStart(2,'0')+'.txt');if(!r.ok)throw Error('Could not load website asset '+i);return r.text()}));
+ const bytes=Uint8Array.from(atob(files.join('').trim()),c=>c.charCodeAt(0));
+ const stream=new Blob([bytes]).stream().pipeThrough(new DecompressionStream('gzip'));
+ siteBundle=JSON.parse(await new Response(stream).text());
+ const css=document.createElement('style');css.textContent=siteBundle.css+'\n.hero h1{font-size:clamp(60px,7vw,100px);max-width:1050px;}';document.head.append(css);
+ draw();
+}
+function draw(){
+ if(!siteBundle)return;
+ const q=new URLSearchParams(location.search);
+ const key=siteBundle.pages[q.get('page')]?q.get('page'):'index.html';
+ const p=siteBundle.pages[key];
+ document.title=p.title||'Darius Construction LLC | San Antonio';
+ let meta=document.querySelector('meta[name="description"]');if(meta)meta.content=p.description||meta.content;
+ document.body.className='';document.body.innerHTML=p.body.replaceAll('assets/darius-logo.webp','assets/darius-logo.png');
+ try{(new Function(siteBundle.js))()}catch(e){console.warn('Preview interactions:',e)}
+ for(const script of document.body.querySelectorAll('script:not([src])')){try{(new Function(script.textContent))()}catch(e){console.warn('Detail preview:',e)}}
+ if(location.hash){const id=decodeURIComponent(location.hash.slice(1));requestAnimationFrame(()=>document.getElementById(id)?.scrollIntoView({behavior:'smooth'}))}else{window.scrollTo(0,0)}
+}
+document.addEventListener('click',e=>{
+ const a=e.target.closest('a[href]');if(!a||!siteBundle||e.defaultPrevented||e.metaKey||e.ctrlKey||e.shiftKey||e.altKey||a.target==='_blank')return;
+ const href=a.getAttribute('href');if(!href||href.startsWith('#')||href.startsWith('mailto:')||href.startsWith('tel:')||href.startsWith('javascript:')||/^https?:/i.test(href))return;
+ const to=new URL(href,location.href);const name=to.pathname.split('/').pop();if(!siteBundle.pages[name])return;
+ e.preventDefault();let args=new URLSearchParams(to.search);args.set('page',name);history.pushState({},'',location.pathname+'?'+args.toString()+to.hash);draw();
+});
+window.addEventListener('popstate',draw);
+startPreview().catch(e=>{document.body.innerHTML='<div class="loading"><strong>Site preview temporarily unavailable</strong><p>'+String(e.message).replace(/[<>]/g,'')+'</p></div>';console.error(e)});
+</script></body></html>
